@@ -73,7 +73,7 @@ allmap <- function(y, p){
     return(y)
 }
 
-z <- nlm(neglogLik, params, object=x, updatep=allmap,
+z <- nlm(neglogLik, params, object=x, pmap=allmap,
          print.level=2, iterlim=500, typsize=abs(params))
 
 x1 <- allmap(x, z$estimate)

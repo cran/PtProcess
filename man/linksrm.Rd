@@ -60,7 +60,7 @@ if (exists('St2')) rm(St2)
 x$gif <- linksrm1_gif
 
 weight <- c(0.1, 0.1, 0.005, 0.005, 0.1, 0.1, 0.1, 0.1)
-z <- nlm(neglogLik, p[1:8], object=x, updatep=temp_map,
+z <- nlm(neglogLik, p[1:8], object=x, pmap=temp_map,
          hessian=TRUE, gradtol=1e-08, steptol=1e-10,
          print.level=2, iterlim=500, typsize=weight)
 

@@ -1,6 +1,6 @@
-neglogLik <- function(params, object, updatep){
+neglogLik <- function(params, object, pmap){
     #   have an arg to subset parameters
-    object <- updatep(object, params)
+    object <- pmap(object, params)
     x <- -logLik(object)
     if (is.infinite(x) | is.na(x)) return(1e15)
     else return(x)

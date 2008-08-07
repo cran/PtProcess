@@ -13,9 +13,11 @@ This page contains a listing of recent changes made to functions, and known gene
 
 \item Arguments \code{eval.pts} and \code{t.plus} in the ground intensity functions have been renamed to \code{evalpts} and \code{tplus}, respectively. This is to lessen the possibility of future conflicts with object orientated naming conventions in the \R\ language. (28 Apr 2008)
 
-\item \code{\link{logLik}}: The log-likelihood calculated in package Versions before Version 3 did not have the sum over the mark density term (see topic \code{\link{logLik}}, under \dQuote{Details}). This term can also be excluded in this Version of the package by placing \code{NULL} for the mark density in the \code{\link{mpp}} object, see example below. (28 Apr 2008)
+\item \code{\link{logLik}}: the log-likelihood calculated in package Versions before Version 3 did not have the sum over the mark density term (see topic \code{\link{logLik}}, under \dQuote{Details}). This term can also be excluded in this Version of the package by placing \code{NULL} for the mark density in the \code{\link{mpp}} object, see example below. (28 Apr 2008)
 
 \item Version 2 had a framework to assign prior densities to the estimated parameters. This has not been retained in Version 3. However, some of the features like holding a parameter at a fixed value, and restricting it to an open or closed interval can be achieved in Version 3; see \code{\link{neglogLik}} for further details. (28 Apr 2008)
+
+\item \code{\link{neglogLik}}: the format of this function has been changed to be consistent with that in package \pkg{HiddenMarkov}. Argument \code{updatep} renamed as \code{pmap}. (07 Aug 2008)
 
 }}
 
@@ -129,7 +131,7 @@ onlysrm <- function(y, p){
 
 params <- c(-2.5, 0.01, 0.8)
 
-z1 <- nlm(neglogLik, params, object=x1, updatep=onlysrm,
+z1 <- nlm(neglogLik, params, object=x1, pmap=onlysrm,
           print.level=2, iterlim=500, typsize=abs(params))
 print(z1$estimate)
 }
