@@ -9,8 +9,8 @@ Provides methods for the generic function \code{\link[base]{plot}}.
 }
 
 \usage{
-\method{plot}{mpp}(x, log = FALSE, ...)
-\method{plot}{linksrm}(x, region, log = FALSE, ...)
+\method{plot}{mpp}(x, log=FALSE, ...)
+\method{plot}{linksrm}(x, region, log=FALSE, ...)
 }
 
 \arguments{

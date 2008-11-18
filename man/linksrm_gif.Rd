@@ -25,7 +25,7 @@ linksrm1_gif(data, evalpts=NULL, params, TT, eta=0.75)
 a data frame containing the event history, where each row represents one event. There must be columns named \code{"time"}, usually the number of days from some origin; \code{"magnitude"} which is the event magnitude less the magnitude threshold, i.e. \eqn{M_k - M_0}{Mk - M0}; and \code{"region"} which are consecutively numbered starting at 1.
 }
 \item{evalpts}{
-a matrix of evaluation points at which the ground intensity is to be calculated. The matrix must include two columns named \code{"time"} and \code{"region"} at which the intensity function will be evaluated.
+a \code{\link{matrix}} or \code{\link{data.frame}}. It must include two columns named \code{"time"} and \code{"region"} that can be referred to as \code{evalpts[,"time"]} and \code{evalpts[,"region"]}, respectively. The function will be evaluated at these points.
 }
 \item{params}{
 vector of parameters of length \eqn{n^2+2n}, where \eqn{n} is the number of regions, for the proposed LSRM in the following order:

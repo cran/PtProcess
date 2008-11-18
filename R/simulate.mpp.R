@@ -1,4 +1,5 @@
-simulate.mpp <- function(object, nsim=1, seed=NULL, max.rate = NA, ...){
+simulate.mpp <- function(object, nsim=1, seed=NULL, max.rate=NA,
+                         stop.condition=NULL, ...){
     data <- object$data
     params <- object$params
     gparams <- eval(object$gmap)
@@ -23,6 +24,7 @@ simulate.mpp <- function(object, nsim=1, seed=NULL, max.rate = NA, ...){
             if (rate > Rmax) stop("gif is not decreasing")
         }
         else if (attr(gif, "rate") == "bounded") {
+            if (is.na(max.rate)) stop('Argument max.rate must be specified when gif has rate "bounded"')
             Rmax <- max.rate
             tau <- rexp(1, rate = Rmax)
             rate <- gif(data = data, evalpts = ti + tau, params = gparams)
@@ -53,6 +55,8 @@ simulate.mpp <- function(object, nsim=1, seed=NULL, max.rate = NA, ...){
             newevent <- c(newevent, object$mark[[2]](ti, data, mparams))
             newevent <- as.data.frame(newevent)
             data <- rbind(data, newevent)
+            if (!is.null(stop.condition))
+                if (stop.condition(data)) break
         }
     }
     object$data <- data

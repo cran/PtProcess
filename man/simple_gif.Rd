@@ -11,18 +11,18 @@ Non-Homogeneous Poisson Processes
 The functions listed here are intensity functions that are not conditional on the history of the process. Each has exactly the same usage and synopsis as the function \code{simple_gif}. They are: \code{expfourier_gif}, \code{exppoly_gif}, \code{fourier_gif}, \code{poly_gif}, and \code{simple_gif}.
 }
 \synopsis{
-simple_gif(data, evalpts, params, TT = NA, tplus = FALSE)
+simple_gif(data, evalpts, params, TT=NA, tplus=FALSE)
 }
 
 \usage{
-simple_gif(data, evalpts, params, tplus = FALSE)
+simple_gif(data, evalpts, params, tplus=FALSE)
 simple_gif(data, evalpts=NULL, params, TT=NA)
 }
 \arguments{
 \item{data}{
 \code{NULL} or a data frame. The contents of this object are not used by these functions, though they retain this argument for consistency with other \code{\link{gif}} functions.}
 \item{evalpts}{
-a vector or matrix. If a vector, the elements will be assumed to represent required evaluation times. A matrix must include a column named \dQuote{time}  at which the intensity function is to be evaluated.
+a \code{\link{vector}}, \code{\link{matrix}} or \code{\link{data.frame}}. If a vector, the elements will be assumed to represent the required evaluation times. Other objects must include a column named \code{"time"} that can be referred to as \code{evalpts[,"time"]}, at which the intensity function will be evaluated.
 }
 \item{params}{
 vector of parameter values as required by the particular intensity function, see Details below.

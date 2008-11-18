@@ -19,6 +19,11 @@ This page contains a listing of recent changes made to functions, and known gene
 
 \item \code{\link{neglogLik}}: the format of this function has been changed to be consistent with that in package \pkg{HiddenMarkov}. Argument \code{updatep} renamed as \code{pmap}. (07 Aug 2008)
 
+\item \code{\link{simulate}}: manual page revised to include more information about controlling the length of the simulated series. (18 Nov 2008)
+
+\item \code{\link{mpp}}: example modified due to warning messages caused by negative \eqn{\lambda_g(t|{\cal H}_t)}{lambda_g(t|Ht)}. (18 Nov 2008)
+
+\item \code{\link{marks}}: manual page revised to include more information. (18 Nov 2008)
 }}
 
 
@@ -31,8 +36,6 @@ This page contains a listing of recent changes made to functions, and known gene
 \section{Future Development}{
 \enumerate{
 \item In the model object, allow one to alternatively specify the \code{name} of the gif function.
-
-\item The methods for \code{simulate} do not have the stopping condition that was in Version 2. This means that events are simulated on the specified interval \code{TT}, and cannot be stopped if an unreasonably too many or too few events are generated, etc.
 
 \item Function \code{\link{linksrm_gif}}: Use of \code{St1} and \code{St2}. Is there a tidier way? Also utilise this feature in \code{\link{srm_gif}}.
 

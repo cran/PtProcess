@@ -20,7 +20,7 @@ etas_gif(data, evalpts=NULL, params, TT)
 a data frame containing the event history, where each row represents one event. There must be columns named \code{"time"}, usually the number of days from some origin; and \code{"magnitude"} which is the event magnitude less the magnitude threshold, i.e. \eqn{M_i - M_0}{Mi - M0}.
 }
 \item{evalpts}{
-a vector or matrix. If a vector, the elements will be assumed to represent required evaluation times. A matrix must include a column named \code{"time"} at which the intensity function will be evaluated.
+a \code{\link{vector}}, \code{\link{matrix}} or \code{\link{data.frame}}. If a vector, the elements will be assumed to represent the required evaluation times. Other objects must include a column named \code{"time"} that can be referred to as \code{evalpts[,"time"]}, at which the intensity function will be evaluated.
 }
 \item{params}{
 vector of parameters values in the following order: \eqn{\code{c}(\mu, A, \alpha, c, p)}{\code{c}(mu, A, alpha, c, p)}.

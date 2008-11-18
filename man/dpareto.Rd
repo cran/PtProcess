@@ -16,12 +16,12 @@ Density, cumulative probability, quantiles and random number generation for the 
 }
 
 \usage{
-dpareto(x, lambda, a, log = FALSE)
+dpareto(x, lambda, a, log=FALSE)
 ppareto(q, lambda, a, lower.tail=TRUE, log.p=FALSE)
 qpareto(p, lambda, a, lower.tail=TRUE, log.p=FALSE)
 rpareto(n, lambda, a)
 
-dtappareto(x, lambda, theta, a, log = FALSE)
+dtappareto(x, lambda, theta, a, log=FALSE)
 ltappareto(data, lambda, theta, a)
 ptappareto(q, lambda, theta, a, lower.tail=TRUE, log.p=FALSE)
 qtappareto(p, lambda, theta, a, lower.tail=TRUE, log.p=FALSE, tol=1e-8)

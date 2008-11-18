@@ -1,4 +1,5 @@
-simulate.linksrm <- function(object, nsim=1, seed=NULL, max.rate = NA, ...){
+simulate.linksrm <- function(object, nsim=1, seed=NULL, max.rate=NA,
+                             stop.condition=NULL, ...){
     data <- object$data
     params <- object$params
     gparams <- eval(object$gmap)
@@ -46,9 +47,8 @@ simulate.linksrm <- function(object, nsim=1, seed=NULL, max.rate = NA, ...){
             newevent <- c(newevent, object$mark[[2]](ti, data, mparams))
             newevent <- as.data.frame(newevent)
             data <- rbind(data, newevent)
-#            if (!is.null(stopping.condition)) 
-#                if (stopping.condition(data)) 
-#                  break
+            if (!is.null(stop.condition))
+                if (stop.condition(data)) break
         }
     }
     object$data <- data

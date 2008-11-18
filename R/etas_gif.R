@@ -7,7 +7,7 @@ function(data, evalpts, params, TT = NA, tplus = FALSE)
 #
 # data           = converted catalogue data (time, magnitude matrix)
 # eval.times     = time instances at which conditional intensity is to be 
-#                  calculated (in units=days since 1.1.90)
+#                  calculated
 # params         = vector of parameters, with names attributes 
 #                  described below
 #  mu            = background rate

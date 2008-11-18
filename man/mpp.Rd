@@ -31,11 +31,10 @@ log L = sum{log lambda_g(ti|Ht)} + sum{log f(yi|Ht)} - integral{lambda_g(t|Ht) d
 where the summation is taken over those events contained in the interval \code{(TT[1], TT[2])}, and the integral is also taken over that interval. However, all events in the data frame \code{data} before \eqn{t}, even those before \code{TT[1]}, form the history of the process \eqn{ {\cal H}_t}{Ht}. This allows an initial period for the process to reach a \dQuote{steady state} or \dQuote{equilibrium}.
 
 The parameter spaces of the ground intensity function and mark distribution are not necessarily disjoint, and can have common parameters. Hence, when the model parameters are estimated, these relationships must be known, and are specified by the arguments \code{gmap} and \code{mmap}. The mapping expressions can also contain arithmetic expressions. The \eqn{i}th element in the \code{params} argument is addressed in the expressions as \code{params[i]}. Here is an example of a five parameter model, where the \code{gif} has 4 parameters, and the mark distribution has 2, with mappings specified as:
-\deqn{
-\code{gmap = expression(c(params[1:3], exp(params[4]+params[5])))}
-}
-\deqn{
-\code{mmap = expression(c(log(params[2]/3), params[5]))}
+\preformatted{
+    gmap = expression(c(params[1:3], exp(params[4]+params[5])))
+
+    mmap = expression(c(log(params[2]/3), params[5]))
 }
 Note the inclusion of the combine (\code{\link{c}}) function, because the \code{\link{expression}} must create a vector of parameters. Care must be taken specifying these expressions are they are embedded directly into the code of various functions.
 }
@@ -68,15 +67,21 @@ x <- mpp(data=Tangshan,
          TT=TT)
 
 allmap <- function(y, p){
-    #    one to one mapping
-    y$params <- p
+    #    one to one mapping, all p positive
+    y$params <- exp(p)
     return(y)
 }
 
-z <- nlm(neglogLik, params, object=x, pmap=allmap,
+#    Parameters must be positive. Transformed so that nlm
+#    can use entire real line (no boundary problems, see
+#    topic "neglogLik" for further explanation).
+z <- nlm(neglogLik, log(params), object=x, pmap=allmap,
          print.level=2, iterlim=500, typsize=abs(params))
 
 x1 <- allmap(x, z$estimate)
+
+#    print parameter estimates
+print(x1$params)
 
 print(logLik(x))
 print(logLik(x1))

@@ -20,7 +20,7 @@ The usage of a ground intensity function takes two forms, one to evaluate the \c
 All ground intensity functions should be defined to contain the following arguments, in the order below, even though they may not be required (see Details below).
 \describe{
   \item{\code{data}}{a data frame containing the history of the process, denoted below as \eqn{ {\cal H}_t}{Ht}. It should contain all variables that are required to evaluate the \code{gif} function, though can contain others too. No history is represented as \code{NULL}.}
-  \item{\code{evalpts}}{a matrix containing the values at which the \code{gif} function is to be evaluated, consistent with what is required by the \code{gif} function.}
+  \item{\code{evalpts}}{a object containing the values at which the \code{gif} function is to be evaluated, consistent with what is required by the \code{gif} function.}
   \item{\code{params}}{vector containing values of the parameters required by the \code{gif} function.}
   \item{\code{TT}}{vector of length 2, being the time interval over which the integral of the ground intensity function is to be evaluated.}
 \item{\code{tplus}}{logical, \eqn{\lambda_g(t|{\cal H}_t)}{lambda_g(t|Ht)} is evaluated as \eqn{\lambda_g(t^+|{\cal H}_t)}{lambda_g(t^+|Ht)} if \code{TRUE}, else \eqn{\lambda_g(t^-|{\cal H}_t)}{lambda_g(t^-|Ht)}. It is important if a \dQuote{jump} occurs at \eqn{t}.}
@@ -31,7 +31,7 @@ Note that the \code{gif} functions not only evaluate values of \eqn{\lambda_g(t_
 
 At the moment, we have the following types of processes: those jump processes that are conditional on their history (\code{\link{etas_gif}}, \code{\link{srm_gif}}, \code{\link{linksrm_gif}}), and non-homogeneous Poisson processes that are not conditional on their history (\code{\link{simple_gif}}). Another case is where we have a collection of point like \dQuote{regions} (or lattice nodes), each with their own ground intensity function, but where each is also dependent on what is happening in the other regions (\code{\link{linksrm_gif}}). The attribute \dQuote{type} determines the \dQuote{methods} used for simulation (\code{\link{simulate.mpp}}) and residual analyses (\code{\link{residuals.mpp}}).
 
-Functions have been given an attribute \dQuote{rate}, taking the values of \dQuote{bounded}, \dQuote{decreasing} or \dQuote{increasing}. This is used within the simulation function \code{\link{simulate.mpp}} which uses the thinning method. This method requires a knowledge of the maximum of \eqn{\lambda_g(t|{\cal H}_t)}{lambda_g(t|Ht)} in a given interval. The argument \code{tplus} is also used by the simulation routine, where it is necessary to determine the value of the intensity immediately after a simulated event.
+Functions have been given an attribute \dQuote{rate}, taking the values of \code{"bounded"}, \code{"decreasing"} or \code{"increasing"}. This is used within the simulation function \code{\link{simulate.mpp}} which uses the thinning method. This method requires a knowledge of the maximum of \eqn{\lambda_g(t|{\cal H}_t)}{lambda_g(t|Ht)} in a given interval. The argument \code{tplus} is also used by the simulation routine, where it is necessary to determine the value of the intensity immediately after a simulated event.
 }
 
 \section{Value}{
