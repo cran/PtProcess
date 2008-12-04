@@ -12,9 +12,9 @@ mpp(data, gif, marks, params, gmap, mmap, TT)
 }
 
 \arguments{
-  \item{data}{a \code{\link{data.frame}} containing the history of the process, denoted below as \eqn{ {\cal H}_t}{Ht}. It should contain all variables that are required to evaluate the \code{gif} function and the mark distribution, though can contain others too. No history is represented as \code{NULL}.}
+  \item{data}{a \code{\link{data.frame}} containing the history of the process, denoted below as \eqn{ {\cal H}_t}{Ht}. It should contain all variables that are required to evaluate the \code{gif} function and the mark distribution, though can contain others too. No history is represented as \code{\link{NULL}}.}
   \item{gif}{ground intensity function. See topic \code{\link{gif}} for further details.}
-  \item{marks}{mark distribution. See topic \code{\link{marks}} for further details.}
+  \item{marks}{a \code{\link{list}} containing the mark distribution. The first component (i.e. \code{marks[[1]]}) is the mark density and the second (i.e. \code{marks[[2]]}) is the random number generator. If either of these functions are not required, the particular component can be set to \code{\link{NULL}}. See topic \code{\link{marks}} for further details.}
   \item{params}{numeric vector of \emph{all} model parameters.}
   \item{gmap}{\code{\link{expression}}, maps the model parameters (\code{params}) into the parameter sub-space of the ground intensity function; see \dQuote{Details} below.}
   \item{mmap}{\code{\link{expression}}, maps the model parameters (\code{params}) into the parameter sub-space of the mark distribution; see \dQuote{Details} below.}

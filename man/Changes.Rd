@@ -24,6 +24,10 @@ This page contains a listing of recent changes made to functions, and known gene
 \item \code{\link{mpp}}: example modified due to warning messages caused by negative \eqn{\lambda_g(t|{\cal H}_t)}{lambda_g(t|Ht)}. (18 Nov 2008)
 
 \item \code{\link{marks}}: manual page revised to include more information. (18 Nov 2008)
+
+\item \code{\link{mpp}}: fuller description to argument \code{marks} on manual page. (19 Nov 2008)
+
+\item \code{\link{Phuket}}: new dataset added. (4 Dec 2008)
 }}
 
 
