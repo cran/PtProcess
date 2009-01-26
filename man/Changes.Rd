@@ -28,6 +28,8 @@ This page contains a listing of recent changes made to functions, and known gene
 \item \code{\link{mpp}}: fuller description to argument \code{marks} on manual page. (19 Nov 2008)
 
 \item \code{\link{Phuket}}: new dataset added. (4 Dec 2008)
+
+\item \code{\link{linksrm_gif}}, \code{\link{marks}}: remove some LaTeX specific formatting to be compatible with \R\ 2.9.0. (26 Jan 2009)
 }}
 
 

@@ -52,10 +52,12 @@ with \eqn{\code{params} = \code{c}(a_1, \cdots, a_n, b_1, \cdots, b_n, c_{11}, c
 \deqn{S_j(t) = \sum_k 10^{\eta(M_k-M_0)},}{S_j(t) = \sum_k 10^{\eta(M_k-M_0)},}
 where the summation is taken over those events in region \eqn{j} with time \eqn{t_k < t}. This model has been discussed by Bebbington \& Harte (2001, 2003). The default value of \eqn{\eta = \code{eta} = 0.75}{\code{eta} = 0.75}.
 
-The difference between \code{linksrm_gif} and \code{linksrm1_gif} is that the stress reduction matrices \code{St1} and \code{St2} (internal to both functions) are calculated every time that the function is called in the case of \code{linksrm_gif}. If the event \emph{history} is not changing between successive calls (e.g. parameter estimation), then this is unnecessary. However, in a simulation, the history changes with the addition of each new event. The function \code{linksrm1_gif} checks to see whether the matrices \code{St1} and \code{St2} exist. If so, these existing matrices are used, and new ones are not calculated. Therefore when using \code{linksrm1_gif} for parameter estimation, one \bold{must} check for the existence of such matrices, and delete upon starting to fit a new model, for example: \newline
-\code{if (exists("St1")) rm(St1)}
-\newline
-\code{if (exists("St2")) rm(St2)}
+The difference between \code{linksrm_gif} and \code{linksrm1_gif} is that the stress reduction matrices \code{St1} and \code{St2} (internal to both functions) are calculated every time that the function is called in the case of \code{linksrm_gif}. If the event \emph{history} is not changing between successive calls (e.g. parameter estimation), then this is unnecessary. However, in a simulation, the history changes with the addition of each new event. The function \code{linksrm1_gif} checks to see whether the matrices \code{St1} and \code{St2} exist. If so, these existing matrices are used, and new ones are not calculated. Therefore when using \code{linksrm1_gif} for parameter estimation, one \bold{must} check for the existence of such matrices, and delete upon starting to fit a new model, for example:
+\preformatted{
+if (exists("St1")) rm(St1)
+
+if (exists("St2")) rm(St2)
+}
 }
 
 \section{Function Attributes}{

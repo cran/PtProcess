@@ -21,7 +21,7 @@ rexp_mark(ti, data, params)
 }
 
 \details{
-The example functions listed under \dQuote{Usage} calculate the {\em logarithm} of the (mark) density and simulate earthquake magnitudes assuming an exponential distribution that is independent of the history of the process. This corresponds to the Gutenberg-Richter law. They assume that the history contains a variable named \code{"magnitude"}.
+The example functions listed under \dQuote{Usage} calculate the \emph{logarithm} of the (mark) density and simulate earthquake magnitudes assuming an exponential distribution that is independent of the history of the process. This corresponds to the Gutenberg-Richter law. They assume that the history contains a variable named \code{"magnitude"}.
 
 All mark densities and random number generators must have the three arguments as shown in the examples above. Multi-parameter distributions have their parameters specified as a vector in the \code{params} argument. Other ancillary data or information can be passed into the function non formally, though one needs to be careful about possible conflict with names of other objects.
 }
