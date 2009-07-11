@@ -30,6 +30,8 @@ This page contains a listing of recent changes made to functions, and known gene
 \item \code{\link{Phuket}}: new dataset added. (4 Dec 2008)
 
 \item \code{\link{linksrm_gif}}, \code{\link{marks}}: remove some LaTeX specific formatting to be compatible with \R\ 2.9.0. (26 Jan 2009)
+
+\item \code{\link{Phuket}}: clarify magnitude scale used in the dataset. (11 Jul 2009)
 }}
 
 
