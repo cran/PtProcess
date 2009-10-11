@@ -23,7 +23,7 @@ a data frame containing the event history, where each row represents one event. 
 a \code{\link{vector}}, \code{\link{matrix}} or \code{\link{data.frame}}. If a vector, the elements will be assumed to represent the required evaluation times. Other objects must include a column named \code{"time"} that can be referred to as \code{evalpts[,"time"]}, at which the intensity function will be evaluated.
 }
 \item{params}{
-vector of parameters values in the following order: \eqn{\code{c}(\mu, A, \alpha, c, p)}{\code{c}(mu, A, alpha, c, p)}.
+vector of parameter values in the following order: \eqn{\code{c}(\mu, A, \alpha, c, p)}{\code{c}(mu, A, alpha, c, p)}.
 }
 \item{TT}{
 vector of length 2, being the time interval over which the integral of the ground intensity function is to be evaluated.
@@ -46,7 +46,6 @@ where \eqn{t_i}{ti} denotes the event times and the summation is taken over thos
 \section{Function Attributes}{
 \describe{
 \item{\code{rate}}{is \code{"decreasing"}.}
-\item{\code{type}}{is \code{"default"}.}
 }}
 
 \seealso{

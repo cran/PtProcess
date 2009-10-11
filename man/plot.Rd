@@ -5,7 +5,7 @@
 
 \title{Plot Point Process Ground Intensity Function}
 \description{
-Provides methods for the generic function \code{\link[base]{plot}}.
+Provides methods for the generic function \code{\link[graphics]{plot}}.
 }
 
 \usage{

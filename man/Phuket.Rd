@@ -6,7 +6,7 @@
 \description{
 The Phuket earthquake occurred on 26 December 2004 at 00:58:53.45 GMT. The \code{Phuket} data frame contains this event and its aftershock sequence.
 }
-\details{The \code{Phuket} data frame contains those events (1111) from the PDE Catalogue, within the spatial region \eqn{89^\circ}{89}E--\eqn{105^\circ}{105}E and \eqn{5^\circ}{5}S--\eqn{16^\circ}{16}N, with magnitude 5 or greater, occurring between midnight on 1 January 2004 and midnight on 1 January 2008 (1461 days later). The tabulated magnitudes are the body wave magnitudes. They are determined by the amplitude of the initial primary wave, and these magnitudes tend to saturate for higher values. Consequently, the tabulated magnitudes for the Phuket Boxing Day event (26 December 2004) and the Sumatra event (28 March 2005) are quite small compared to magnitudes derived on other scales.}
+\details{The \code{Phuket} data frame contains those events (1111) from the PDE Catalogue, within the spatial region \eqn{89^\circ}{89&#176;}E--\eqn{105^\circ}{105&#176;}E and \eqn{5^\circ}{5&#176;}S--\eqn{16^\circ}{16&#176;}N, with magnitude 5 or greater, occurring between midnight on 1 January 2004 and midnight on 1 January 2008 (1461 days later). The tabulated magnitudes are the body wave magnitudes. They are determined by the amplitude of the initial primary wave, and these magnitudes tend to saturate for higher values. Consequently, the tabulated magnitudes for the Phuket Boxing Day event (26 December 2004) and the Sumatra event (28 March 2005) are quite small compared to magnitudes derived on other scales.}
 
 \format{
   This data frame contains the following columns:

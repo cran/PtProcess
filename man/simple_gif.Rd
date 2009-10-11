@@ -85,7 +85,6 @@ The intensity function is \eqn{\lambda_g(t) = a + b t^g}{lambda_g(t) = a + b t^g
 \section{Function Attributes}{
 \describe{
 \item{\code{rate}}{is \code{"bounded"}.}
-\item{\code{type}}{is \code{"default"}.}
 }}
 
 \seealso{

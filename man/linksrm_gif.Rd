@@ -63,7 +63,6 @@ if (exists("St2")) rm(St2)
 \section{Function Attributes}{
 \describe{
 \item{\code{rate}}{is \code{"increasing"}.}
-\item{\code{type}}{is \code{"linksrm"}.}
 \item{\code{regions}}{is \code{expression(sqrt(length(params) + 1) - 1)}.}
 }}
 

@@ -32,6 +32,5 @@ function(data, evalpts, params, TT = NA, tplus = FALSE)
 	return(ci)
 }
 attr(srm_gif, "rate") <- "increasing"
-attr(srm_gif, "type") <- "default"
 
 

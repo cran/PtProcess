@@ -1,4 +1,4 @@
-\name{Changes}
+\name{Change Log}
 \alias{Changes}
 \title{Changes Made to the Package}
 \description{
@@ -32,6 +32,12 @@ This page contains a listing of recent changes made to functions, and known gene
 \item \code{\link{linksrm_gif}}, \code{\link{marks}}: remove some LaTeX specific formatting to be compatible with \R\ 2.9.0. (26 Jan 2009)
 
 \item \code{\link{Phuket}}: clarify magnitude scale used in the dataset. (11 Jul 2009)
+
+\item Attribute \code{type} is no longer required on the \code{\link{gif}} functions, removed. (7 Oct 2009)
+
+\item \code{\link{logLik}}, \code{\link{neglogLik}}: Parallel processing support, using package \pkg{snow}, has been added. (8 Oct 2009)
+
+\item \code{\link{plot}}: Correct hyperlink to generic plot function. (10 Oct 2009)
 }}
 
 
@@ -43,19 +49,19 @@ This page contains a listing of recent changes made to functions, and known gene
 
 \section{Future Development}{
 \enumerate{
+\item Currently spatial versions of the ETAS model are being written and tested.
+
 \item In the model object, allow one to alternatively specify the \code{name} of the gif function.
 
 \item Function \code{\link{linksrm_gif}}: Use of \code{St1} and \code{St2}. Is there a tidier way? Also utilise this feature in \code{\link{srm_gif}}.
 
-\item Need models to deal with space. How far can one go using the present \code{\link{mpp}} framework? Is it necessary to define another more general model class? Is there another class of models similar in nature to the class defined for \code{\link{linksrm}}?
-
 \item Want a generic function, possibly called \code{forecast}, to produce probability forecasts. This would be based on simulating empirical probability distributions.
 
-\item Want a function like \code{\link{linksrm_convert}} to map between the two main parameterisations of the ETAS model.
+\item Want a function like \code{\link{linksrm_convert}} to map between the two main parametrisations of the ETAS model.
 
 \item Add general forms of the truncated exponential and gamma distributions as marks for the magnitude of the event.
 
-\item Check whether the mark functions can simply refer to \code{gif} (if they require its value). It (\code{gif}) has been defined in the method functions.
+\item A tidy way to pass the values of the \code{gif} function into the mark distributions, if required.
 }}
 
 \examples{

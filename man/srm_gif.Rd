@@ -54,7 +54,6 @@ and the summation is taken over those \eqn{i} such that \eqn{t_i < t}{ti < t}, w
 \section{Function Attributes}{
 \describe{
 \item{\code{rate}}{is \code{"increasing"}.}
-\item{\code{type}}{is \code{"default"}.}
 }}
 
 \seealso{

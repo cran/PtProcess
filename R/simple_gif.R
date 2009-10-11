@@ -37,7 +37,6 @@ function(data, evalpts, params, TT = NA, tplus = FALSE)
 	return(ci)
 }
 attr(expfourier_gif, "rate") <- "bounded"
-attr(expfourier_gif, "type") <- "default"
 
 
 exppoly_gif <-
@@ -82,7 +81,6 @@ function(data, evalpts, params, TT = NA, tplus = FALSE)
 	return(ci)
 }
 attr(exppoly_gif, "rate") <- "bounded"
-attr(exppoly_gif, "type") <- "default"
 
 
 fourier_gif <-
@@ -122,7 +120,6 @@ function(data, evalpts, params, TT = NA, tplus = FALSE)
 	return(ci)
 }
 attr(fourier_gif, "rate") <- "bounded"
-attr(fourier_gif, "type") <- "default"
 
 
 poly_gif <-
@@ -144,7 +141,6 @@ function(data, evalpts, params, TT = NA, tplus = FALSE)
 	return(ci)
 }
 attr(poly_gif, "rate") <- "bounded"
-attr(poly_gif, "type") <- "default"
 
 
 simple_gif <-
@@ -172,7 +168,6 @@ function(data, evalpts, params, TT = NA, tplus = FALSE)
 	return(ci)
 }
 attr(simple_gif, "rate") <- "bounded"
-attr(simple_gif, "type") <- "default"
 
 
 

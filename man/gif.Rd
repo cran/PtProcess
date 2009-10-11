@@ -29,7 +29,7 @@ All ground intensity functions should be defined to contain the following argume
 \section{Details}{
 Note that the \code{gif} functions not only evaluate values of \eqn{\lambda_g(t_i|{\cal H}_t)}{lambda_g(ti|Ht)}, but also the integral. The value of the ground intensity function is returned at each time point specified in \code{evalpts} when \code{TT==NA}. If \code{TT} is not missing, the integral between \code{TT[1]} and \code{TT[2]} of the ground intensity function is calculated. In this last situation, anything assigned to the argument \code{evalpts} will have no effect.
 
-At the moment, we have the following types of processes: those jump processes that are conditional on their history (\code{\link{etas_gif}}, \code{\link{srm_gif}}, \code{\link{linksrm_gif}}), and non-homogeneous Poisson processes that are not conditional on their history (\code{\link{simple_gif}}). Another case is where we have a collection of point like \dQuote{regions} (or lattice nodes), each with their own ground intensity function, but where each is also dependent on what is happening in the other regions (\code{\link{linksrm_gif}}). The attribute \dQuote{type} determines the \dQuote{methods} used for simulation (\code{\link{simulate.mpp}}) and residual analyses (\code{\link{residuals.mpp}}).
+At the moment, we have the following types of processes: those jump processes that are conditional on their history (\code{\link{etas_gif}}, \code{\link{srm_gif}}, \code{\link{linksrm_gif}}), and non-homogeneous Poisson processes that are not conditional on their history (\code{\link{simple_gif}}). Another case is where we have a collection of point like \dQuote{regions} (or lattice nodes), each with their own ground intensity function, but where each is also dependent on what is happening in the other regions (\code{\link{linksrm_gif}}).
 
 Functions have been given an attribute \dQuote{rate}, taking the values of \code{"bounded"}, \code{"decreasing"} or \code{"increasing"}. This is used within the simulation function \code{\link{simulate.mpp}} which uses the thinning method. This method requires a knowledge of the maximum of \eqn{\lambda_g(t|{\cal H}_t)}{lambda_g(t|Ht)} in a given interval. The argument \code{tplus} is also used by the simulation routine, where it is necessary to determine the value of the intensity immediately after a simulated event.
 }
@@ -46,8 +46,6 @@ Each function should have some of the following attributes if it is to be used i
 \item{\code{rate}}{must be specified if the default method for \code{\link{simulate.mpp}} is to be used. Takes the values \code{"bounded"}, \code{"decreasing"} or \code{"increasing"}; see Details.}
 
 \item{\code{regions}}{an expression giving the number of regions; required with \code{\link{linksrm_gif}}.}
-
-\item{\code{type}}{takes the values \code{"default"} or \code{"linksrm"}, and indicates the \dQuote{methods} to be used by \code{\link{residuals.mpp}} and \code{\link{simulate.mpp}}. If type is not specified, then the \code{"default"} method is used.}
 }}
 
 \seealso{

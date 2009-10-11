@@ -81,5 +81,4 @@ function(data, evalpts, params, TT = NA, tplus = FALSE)
 	return(ci)
 }
 attr(etas_gif, "rate") <- "decreasing"
-attr(etas_gif, "type") <- "default"
 

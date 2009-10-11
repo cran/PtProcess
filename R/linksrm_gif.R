@@ -65,7 +65,6 @@ function (data, evalpts, params, TT = NA, tplus = FALSE, eta = 0.75)
     return(as.vector(ci))
 }
 attr(linksrm_gif, "rate") <- "increasing"
-attr(linksrm_gif, "type") <- "linksrm"
 attr(linksrm_gif, "regions") <- expression(sqrt(length(params) + 1) - 1)
 
 
@@ -136,6 +135,5 @@ function (data, evalpts, params, TT = NA, tplus = FALSE, eta = 0.75)
     return(as.vector(ci))
 }
 attr(linksrm1_gif, "rate") <- "increasing"
-attr(linksrm1_gif, "type") <- "linksrm"
 attr(linksrm1_gif, "regions") <- expression(sqrt(length(params) + 1) - 1)
 
