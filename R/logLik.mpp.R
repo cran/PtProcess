@@ -11,7 +11,7 @@ logLik.mpp <- function(object, SNOWcluster=NULL, ...){
                      (data[,"time"] >= TT[1])), ]
     if (!is.null(SNOWcluster)){
         if (!require(snow)) stop("The R package `snow' is required")
-        if (any(class(SNOWcluster)=="cluster")){
+        if (inherits(SNOWcluster, "cluster")){
             #  swap order of evalpts & data, TT & tplus not needed
             gif_cluster <- function(evalpts, data, params)
                 cif(data, evalpts, params, TT=NA, tplus=FALSE)
@@ -21,10 +21,12 @@ logLik.mpp <- function(object, SNOWcluster=NULL, ...){
             n1 <- round(sqrt(2*N/m))
             w <- list()
             w[[1]] <- evalpts0[1:n1,]
-            for (i in 2:(m-1)){
-                n2 <- round(sqrt((n1+0.5)^2 - 2*(n1-N/m)))
-                w[[i]] <- evalpts0[(n1+1):n2,]
-                n1 <- n2
+            if (m > 2){
+                for (i in 2:(m-1)){
+                    n2 <- round(sqrt((n1+0.5)^2 - 2*(n1-N/m)))
+                    w[[i]] <- evalpts0[(n1+1):n2,]
+                    n1 <- n2
+                }
             }
             w[[m]] <- evalpts0[(n1+1):n,]
             L0 <- clusterApply(SNOWcluster, w, gif_cluster,

@@ -7,13 +7,8 @@ Conditional Intensity for Stress Release Model
 This function calculates the value of the conditional intensity of a Stress Release Model (SRM). Spatial coordinates of the events are not taken into account.
 }
 
-\synopsis{
-srm_gif(data, evalpts, params, TT=NA, tplus=FALSE)
-}
-
 \usage{
-srm_gif(data, evalpts, params, tplus=FALSE)
-srm_gif(data, evalpts=NULL, params, TT)
+srm_gif(data, evalpts, params, TT=NA, tplus=FALSE)
 }
 
 \arguments{
@@ -24,7 +19,7 @@ a data frame containing the event history, where each row represents one event. 
 a \code{\link{vector}}, \code{\link{matrix}} or \code{\link{data.frame}}. If a vector, the elements will be assumed to represent the required evaluation times. Other objects must include a column named \code{"time"} that can be referred to as \code{evalpts[,"time"]}, at which the intensity function will be evaluated.
 }
 \item{params}{
-vector of parameters for the proposed SRM model in the order \eqn{\code{c}(a, b, c)}.
+vector of parameters for the proposed SRM model in the order \eqn{(a, b, c)}.
 }
 \item{TT}{
 vector of length 2, being the time interval over which the integral of the conditional intensity function is to be evaluated.
@@ -33,6 +28,11 @@ vector of length 2, being the time interval over which the integral of the condi
 }
 }
 \value{
+Two usages are as follows.
+\preformatted{
+srm_gif(data, evalpts, params, tplus=FALSE)
+srm_gif(data, evalpts=NULL, params, TT)
+}
 The first usage returns a vector containing the values of \eqn{\lambda_g(t)}{lambda_g(t)} evaluated at the specified points. In the second usage, it returns the value of the integral.
 }
 \details{

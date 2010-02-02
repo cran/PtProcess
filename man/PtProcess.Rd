@@ -54,15 +54,15 @@ Aalen, O.O. & Hoem, J.M. (1978). Random time changes for multivariate counting p
 
 Baddeley, A. (2008). \emph{Open source software for spatial statistics.} \url{http://www.spatstat.org/}.
 
-Baddeley, A. and Turner, R. (2005) Spatstat: an R package for analyzing spatial point patterns. \emph{Journal of Statistical Software} \bold{12(6)}, 1--42. \url{http://www.jstatsoft.org}, ISSN: 1548-7660.
+Baddeley, A. & Turner, R. (2005) Spatstat: an R package for analyzing spatial point patterns. \emph{Journal of Statistical Software} \bold{12(6)}, 1--42. \url{http://www.jstatsoft.org}, ISSN: 1548-7660.
 
 Baddeley, A.; Turner, R.; Moller, J. & Hazelton, M. (2005a). Residual analysis for spatial point processes (with discussion). \emph{J. R. Statist. Soc. B} \bold{67(5)}, 617--666.  DOI: \url{http://dx.doi.org/10.1111/j.1467-9868.2005.00519.x}.
 
-Bebbington, M. \& Harte, D.S. (2001). On the statistics of the linked stress release model. \emph{Journal of Applied Probability} \bold{38A}, 176--187. DOI: \url{http://dx.doi.org/10.1239/jap/1085496600}.
+Bebbington, M.S. & Harte, D.S. (2001). On the statistics of the linked stress release model. \emph{Journal of Applied Probability} \bold{38A}, 176--187. DOI: \url{http://dx.doi.org/10.1239/jap/1085496600}.
 
 Bebbington, M.S. & Harte, D.S. (2003). The linked stress release model for spatio-temporal seismicity: formulations, procedures and applications. \emph{Geophysical Journal International} \bold{154}, 925--946. DOI: \url{http://dx.doi.org/10.1046/j.1365-246X.2003.02015.x}.
 
-Brownrigg, R. & Harte, D.S. (2005). Using \R\ for statistical seismology. \emph{\R\ News} \bold{5(1)}, 31--35.
+Brownrigg, R. & Harte, D.S. (2005). Using \R for statistical seismology. \emph{\R News} \bold{5(1)}, 31--35.
 
 Daley, D.J. & Vere-Jones, D. (2003). \emph{An Introduction to the Theory of Point Processes. Volume I: Elementary Theory and Methods. Second Edition.} Springer-Verlag, New York. \url{http://books.google.com/?isbn=0387955410}.
 
@@ -81,6 +81,8 @@ Ogata, Y. (1988). Statistical models for earthquake occurrences and residual ana
 Ogata, Y. (1998). Space-time point-process models for earthquake occurrences. \emph{Ann. Instit. Statist. Math. (Tokyo)} \bold{50(2)}, 379--402. DOI: \url{http://dx.doi.org/10.1023/A:1003403601725}.
 
 Ogata, Y. (1999). Seismicity analysis through point-process modeling: a review. \emph{Pure and Applied Geophysics} \bold{155}, 471--507. DOI: \url{http://dx.doi.org/10.1007/s000240050275}.
+
+Ogata, Y. & Zhuang, J.C. (2006). Space-time ETAS models and an improved extension. \emph{Tectonophysics} \bold{413(1-2)}, 13--23. DOI: \url{http://dx.doi.org/10.1016/j.tecto.2005.10.016}.
 
 Peng, R. (2002). Multi-dimensional Point Process Models. Package \dQuote{ptproc}, \url{http://www.biostat.jhsph.edu/~rpeng}.
 

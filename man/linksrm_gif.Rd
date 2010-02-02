@@ -8,17 +8,11 @@ Ground Intensity for Linked Stress Release Model
 Calculates the value of the ground intensity of a Linked Stress Release Model (LSRM). This model allows for multiple linked regions, where the stress can be transferred between the regions.
 }
 
-\synopsis{
-linksrm_gif(data, evalpts, params, TT=NA, tplus=FALSE, eta=0.75)
-}
-
 \usage{
-linksrm_gif(data, evalpts, params, tplus=FALSE, eta=0.75)
-linksrm_gif(data, evalpts=NULL, params, TT, eta=0.75)
-
-linksrm1_gif(data, evalpts, params, tplus=FALSE, eta=0.75)
-linksrm1_gif(data, evalpts=NULL, params, TT, eta=0.75)
+linksrm_gif(data, evalpts, params, TT=NA, tplus=FALSE, eta=0.75)
+linksrm1_gif(data, evalpts, params, TT=NA, tplus=FALSE, eta=0.75)
 }
+
 
 \arguments{
 \item{data}{
@@ -29,7 +23,10 @@ a \code{\link{matrix}} or \code{\link{data.frame}}. It must include two columns 
 }
 \item{params}{
 vector of parameters of length \eqn{n^2+2n}, where \eqn{n} is the number of regions, for the proposed LSRM in the following order:
-\deqn{\code{c}(a_1, \cdots, a_n, b_1, \cdots, b_n, c_{11}, c_{12}, c_{13}, \cdots, c_{nn}).}{\code{c}(a_1, \dots, a_n, b_1, \dots, b_n, c_{11}, c_{12}, c_{13}, \dots, c_{nn}).}
+\deqn{
+(a_1, \cdots, a_n, b_1, \cdots, b_n, c_{11}, c_{12}, c_{13}, \cdots, c_{nn}).
+}{
+(a_1, ..., a_n, b_1, ..., b_n, c_{11}, c_{12}, c_{13}, ..., c_{nn}).}
 }
 \item{TT}{
 vector of length 2, being the time interval over which the integral of the ground intensity function is to be evaluated.
@@ -39,6 +36,14 @@ vector of length 2, being the time interval over which the integral of the groun
 \item{eta}{a scalar used in the stress calculations, see Details below.}
 }
 \value{
+Two usages of each function are as follows.
+\preformatted{
+linksrm_gif(data, evalpts, params, tplus=FALSE, eta=0.75)
+linksrm_gif(data, evalpts=NULL, params, TT, eta=0.75)
+
+linksrm1_gif(data, evalpts, params, tplus=FALSE, eta=0.75)
+linksrm1_gif(data, evalpts=NULL, params, TT, eta=0.75)
+}
 The first usage returns a vector containing the values of \eqn{\lambda_g(t,i)}{lambda_g(t,i)} evaluated at the specified \dQuote{time-region} points. In the second usage, it returns a vector containing the value of the integral for each region.
 }
 \details{
@@ -48,9 +53,13 @@ The ground intensity for the \eqn{i}th region is assumed to have the form
 }{
 lambda_h(t,i) = exp{ a_i + b_i*[t - sum_j c_{ij} S_j(t)]}
 }
-with \eqn{\code{params} = \code{c}(a_1, \cdots, a_n, b_1, \cdots, b_n, c_{11}, c_{12}, c_{13}, \cdots, c_{nn})}{\code{params} = \code{c}(a_1, \dots, a_n, b_1, \dots, b_n, c_{11}, c_{12}, c_{13}, \dots, c_{nn})}; and
-\deqn{S_j(t) = \sum_k 10^{\eta(M_k-M_0)},}{S_j(t) = \sum_k 10^{\eta(M_k-M_0)},}
-where the summation is taken over those events in region \eqn{j} with time \eqn{t_k < t}. This model has been discussed by Bebbington \& Harte (2001, 2003). The default value of \eqn{\eta = \code{eta} = 0.75}{\code{eta} = 0.75}.
+with \code{params}\eqn{= \code{c}(a_1, \cdots, a_n, b_1, \cdots, b_n, c_{11}, c_{12}, c_{13}, \cdots, c_{nn})}{ = (a_1, ..., a_n, b_1, ..., b_n, c_{11}, c_{12}, c_{13}, ..., c_{nn})}; and
+\deqn{
+S_j(t) = \sum_k 10^{\eta(M_k-M_0)},
+}{
+S_j(t) = SUM_k 10^{eta(M_k-M_0)},
+}
+where the summation is taken over those events in region \eqn{j} with time \eqn{t_k < t}. This model has been discussed by Bebbington & Harte (2001, 2003). The default value of \eqn{\eta = \code{eta} = 0.75}{eta = 0.75}.
 
 The difference between \code{linksrm_gif} and \code{linksrm1_gif} is that the stress reduction matrices \code{St1} and \code{St2} (internal to both functions) are calculated every time that the function is called in the case of \code{linksrm_gif}. If the event \emph{history} is not changing between successive calls (e.g. parameter estimation), then this is unnecessary. However, in a simulation, the history changes with the addition of each new event. The function \code{linksrm1_gif} checks to see whether the matrices \code{St1} and \code{St2} exist. If so, these existing matrices are used, and new ones are not calculated. Therefore when using \code{linksrm1_gif} for parameter estimation, one \bold{must} check for the existence of such matrices, and delete upon starting to fit a new model, for example:
 \preformatted{

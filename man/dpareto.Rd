@@ -12,7 +12,7 @@
 \title{Pareto and Tapered Pareto Distributions}
 
 \description{
-Density, cumulative probability, quantiles and random number generation for the Pareto and tapered Pareto distributions with shape parameter \eqn{\lambda}, tapering parameter \eqn{\theta} and range \eqn{a \le x < \infty}; and log-likelihood of the tapered Pareto distribution.
+Density, cumulative probability, quantiles and random number generation for the Pareto and tapered Pareto distributions with shape parameter \eqn{\lambda}{lambda}, tapering parameter \eqn{\theta}{theta} and range \eqn{a \le x < \infty}{a <= x < infty}; and log-likelihood of the tapered Pareto distribution.
 }
 
 \usage{
@@ -24,7 +24,8 @@ rpareto(n, lambda, a)
 dtappareto(x, lambda, theta, a, log=FALSE)
 ltappareto(data, lambda, theta, a)
 ptappareto(q, lambda, theta, a, lower.tail=TRUE, log.p=FALSE)
-qtappareto(p, lambda, theta, a, lower.tail=TRUE, log.p=FALSE, tol=1e-8)
+qtappareto(p, lambda, theta, a, lower.tail=TRUE, log.p=FALSE,
+           tol=1e-8)
 rtappareto(n, lambda, theta, a)
 }
 
@@ -35,36 +36,44 @@ rtappareto(n, lambda, theta, a)
   \item{n}{number of observations to simulate.}
   \item{lambda}{shape parameter.}
   \item{theta}{tapering parameter.}
-  \item{a}{the random variable takes values on the interval \eqn{a \le x < \infty}.}
+  \item{a}{the random variable takes values on the interval \eqn{a \le x < \infty}{a <= x < infty}.}
   \item{log, log.p}{logical; if \code{TRUE}, probabilities \code{p} are given as \code{log(p)}.}
-  \item{lower.tail}{logical; if \code{TRUE} (default), probabilities are \eqn{\Pr\{X \le x\}}, otherwise, \eqn{\Pr\{X > x\}}.}
+  \item{lower.tail}{logical; if \code{TRUE} (default), probabilities are \eqn{\Pr\{X \le x\}}{Pr{X <= x}}, otherwise, \eqn{\Pr\{X > x\}}{Pr{X > x}}.}
   \item{tol}{convergence criteria for the Newton Raphson algorithm for solving the quantiles of the tapered Pareto distribution.}
 }
 
 \details{
-Let \eqn{Y} be an exponential random variable with parameter \eqn{\lambda > 0}. Then the distribution function of \eqn{Y} is
+Let \eqn{Y} be an exponential random variable with parameter \eqn{\lambda > 0}{lambda > 0}. Then the distribution function of \eqn{Y} is
 \deqn{
 F_Y(y) = \Pr\{Y < y \} = 1 - \exp(-\lambda y),
+}{
+F_Y(y) = Pr{Y < y} = 1 - exp(-lambda*y),
 }
 and the density function is
 \deqn{
 f_Y(y) = \lambda \exp(-\lambda y).
+}{
+f_Y(y) = lambda exp(-lambda*y).
 }
-Further, the mean and variance of the distribution of \eqn{Y} is \eqn{1/\lambda} and \eqn{1/\lambda^2}, respectively.
+Further, the mean and variance of the distribution of \eqn{Y} is \eqn{1/\lambda}{1/lambda} and \eqn{1/\lambda^2}{1/lambda^2}, respectively.
 
 Now transform \eqn{Y} as
-\deqn{X = a \exp(Y),}
-where \eqn{a>0}. Then \eqn{X} is a Pareto random variable with shape parameter \eqn{\lambda}{\lambda} and distribution function
+\deqn{
+X = a \exp(Y),
+}{
+X = a exp(Y),
+}
+where \eqn{a>0}. Then \eqn{X} is a Pareto random variable with shape parameter \eqn{\lambda}{lambda} and distribution function
 \deqn{
 F_X(x) = \Pr\{X < x \} = 1 - \left( \frac{a}{x} \right)^\lambda,
 }{
-F_X(x) = Pr{X < x} = 1 - (a/x)^\lambda,
+F_X(x) = Pr{X < x} = 1 - (a/x)^lambda,
 }
-where \eqn{a \le x < \infty}, and density function
+where \eqn{a \le x < \infty}{a <= x < infty}, and density function
 \deqn{
 f_X(x) = \frac{\lambda}{a} \left( \frac{a}{x} \right)^{\lambda+1}.
 }{
-f_X(x) = (\lambda/a) * (a/x)^(\lambda+1).
+f_X(x) = (lambda/a) * (a/x)^(lambda+1).
 }
 
 We simulate the Pareto deviates by generating exponential deviates, and then transforming as described above.
@@ -73,66 +82,68 @@ As above, let \eqn{X} be Pareto with shape parameter \eqn{\lambda}, and define \
 \deqn{
 \Pr\{X > x\} = \left( \frac{a}{x} \right)^\lambda
 }{
-Pr{X > x} = (a/x)^\lambda
+Pr{X > x} = (a/x)^lambda
 }
 and
 \deqn{
 \Pr\{W > w\} = \exp\left( \frac{a - w}{\theta} \right),
 }{
-Pr{W > w} = exp[(a - w)/\theta],
+Pr{W > w} = exp[(a - w)/theta],
 }
-where \eqn{a \le w < \infty}. Say we sample one independent value from each of the distributions \eqn{X} and \eqn{W}, then
+where \eqn{a \le w < \infty}{a <= w < infty}. Say we sample one independent value from each of the distributions \eqn{X} and \eqn{W}, then
 \deqn{
 \Pr\{X > z\ \&\ W > z\} = \Pr\{X > z\} \Pr\{ W > z\} = \left( \frac{a}{z} \right)^\lambda \exp\left( \frac{a - z}{\theta} \right).
 }{
-Pr{X > z \& W > z} = Pr{X > z} Pr{ W > z} = (a/z)^\lambda * exp[(a - z)/\theta].
+Pr{X > z & W > z} = Pr{X > z} Pr{ W > z} = (a/z)^lambda * exp[(a - z)/theta].
 }
 We say that \eqn{Z} has a tapered Pareto distribution if it has the above distribution, i.e.
 \deqn{
 F_Z(z) = \Pr\{Z < z\} = 1- \left( \frac{a}{z} \right)^\lambda \exp\left( \frac{a - z}{\theta} \right).
 }{
-F_Z(z) = Pr{Z < z} = 1 - (a/z)^\lambda * exp[(a - z)/\theta].
+F_Z(z) = Pr{Z < z} = 1 - (a/z)^lambda * exp[(a - z)theta].
 }
-The above relationship shows that a tapered Pareto deviate can be simulated by generating independent values of \eqn{X} and \eqn{W}, and then letting \eqn{Z = \min(X, W)}. This minimum has the effect of \dQuote{tapering} the tail of the Pareto distribution.
+The above relationship shows that a tapered Pareto deviate can be simulated by generating independent values of \eqn{X} and \eqn{W}, and then letting \eqn{Z = \min(X, W)}{Z = min(X, W)}. This minimum has the effect of \dQuote{tapering} the tail of the Pareto distribution.
 
 The tapered Pareto variable \eqn{Z} has density
 \deqn{
 f_Z(z) = \left( \frac{\lambda}{z} + \frac{1}{\theta} \right) \left( \frac{a}{z} \right)^\lambda \exp\left( \frac{a - z}{\theta} \right).
 }{
-f_Z(z) = (\lambda/z + 1/\theta) (a/z)^\lambda * exp[(a - z)/\theta].
+f_Z(z) = (lambda/z + 1/theta) (a/z)^lambda * exp[(a - z)/theta].
 }
 Given a sample of data \eqn{z_1, z_2, \cdots, z_n}{z_1, z_2, ..., z_n}, we write the log-likelihood as
 \deqn{
 \log L = \sum_{i=1}^n \log f_Z(z_i).
+}{
+log L = SUM_{i=1}^n log f_Z(z_i).
 }
 Hence the gradients are calculated as
 \deqn{
 \frac{\partial \log L}{\partial \lambda} = \theta \sum_{i=1}^n \frac{1}{\lambda \theta + z_i} - \sum_{i=1}^n \log(z_i/a)
 }{
-\partial log L/\partial \lambda = \theta * sum{1/(\lambda*\theta + z_i)} - sum{log(z_i/a)}
+(partial log L)/(partial lambda) = theta * SUM_i{1/(lambda*theta + z_i)} - SUM_i{log(z_i/a)}
 }
 and
 \deqn{
 \frac{\partial \log L}{\partial \theta} = \frac{-1}{\theta} \sum_{i=1}^n \frac{z_i}{\lambda \theta + z_i} - \frac{1}{\theta^2} \sum_{i=1}^n (a - z_i).
 }{
-\partial log L/\partial \theta = -1/\theta * sum{z_i/(\lambda*\theta + z_i)} - 1/\theta^2 * sum{a - z_i}.
+(partial log L/partial theta) = -1/theta * SUM_i{z_i/(lambda*theta + z_i)} - 1/theta^2 * SUM_i{a - z_i}.
 }
 Further, the Hessian is calculated using
 \deqn{
 \frac{\partial^2 \log L}{\partial \lambda^2} = -\theta^2 \sum_{i=1}^n \frac{1}{(\lambda \theta + z_i)^2},
 }{
-\partial^2 log L/\partial \lambda^2 = -\theta^2 * sum{1/(\lambda*\theta + z_i)^2},
+(partial^2 log L)/(partial lambda^2) = -theta^2 * SUM_i{1/(lambda*theta + z_i)^2},
 }
 \deqn{
 \frac{\partial^2 \log L}{\partial \theta^2} = \frac{1}{\theta^2} \sum_{i=1}^n \frac{z_i(2\lambda\theta + z_i)}{(\lambda \theta + z_i)^2} - \frac{2}{\theta^3} \sum_{i=1}^n (a - z_i),
 }{
-\partial^2 log L/\partial \theta^2 = 1/\theta^2 * sum{z_i*(2*\lambda*\theta + z_i)/(\lambda*\theta + z_i)^2} + 2/\theta^3 * sum{a - z_i},
+(partial^2 log L)/(partial theta^2) = 1/theta^2 * SUM_i{z_i*(2*lambda*theta + z_i)/(lambda*theta + z_i)^2} + 2/theta^3 * SUM_i{a - z_i},
 }
 and
 \deqn{
 \frac{\partial^2 \log L}{\partial \theta \, \partial \lambda} = \frac{\partial^2 \log L}{\partial \lambda \, \partial \theta} = \sum_{i=1}^n \frac{z_i}{(\lambda \theta + z_i)^2}.
 }{
-\partial^2 log L/(\partial \theta \partial \lambda) = \partial^2 log L/(\partial \lambda \partial \theta) = sum{z_i/(\lambda*\theta + z_i)^2}.
+(partial^2 log L)/(partial theta partial lambda) = (partial^2 log L)/(partial lambda partial theta) = SUM_i{z_i/(lambda*theta + z_i)^2}.
 }
 
 
@@ -146,23 +157,23 @@ Assume that the magnitude cutoff is \eqn{M_0}, and let \eqn{Y = M - M_0}. Given 
 \deqn{
 \log_{10} \left( 1 - F_Y(y) \right) = \frac{-\lambda y}{\log_e 10}.
 }{
-\log_10 (1 - F_Y(y)) = -\lambda/(log_e 10) * y.
+log_10 (1 - F_Y(y)) = lambda/(log_e 10) * y.
 }
-The coefficient \eqn{\lambda/(\log_e 10)} is often referred to as the \eqn{b}-value, and its negative value is the slope of the line in the GR plot.
+The coefficient \eqn{\lambda/(\log_e 10)}{lambda/(log_e 10)} is often referred to as the \eqn{b}-value, and its negative value is the slope of the line in the GR plot.
 
 Now define \eqn{S} as
 \deqn{
 S = 10^{\gamma (M - M_0)} = 10^{\gamma Y}.
 }{
-S = 10^{\gamma (M - M_0)} = 10^{\gamma * Y}.
+S = 10^{gamma (M - M_0)} = 10^{gamma * Y}.
 }
-When \eqn{\gamma = 0.75}, \eqn{S} is the \dQuote{stress}; and when \eqn{\gamma = 1.5}, \eqn{S} is the \dQuote{seismic moment}. Still assuming that \eqn{Y} is exponential with parameter \eqn{\lambda}{\lambda}, then \eqn{Y \gamma \log_e 10} is also exponential with parameter \eqn{\lambda/(\gamma \log_e 10)}. Hence, by noting that \eqn{S} can be rewritten as
+When \eqn{\gamma = 0.75}{gamma=0.75}, \eqn{S} is the \dQuote{stress}; and when \eqn{\gamma = 1.5}{gamma=1.5}, \eqn{S} is the \dQuote{seismic moment}. Still assuming that \eqn{Y} is exponential with parameter \eqn{\lambda}{lambda}, then \eqn{Y \gamma \log_e 10}{Y * gamma  * log_e 10} is also exponential with parameter \eqn{\lambda/(\gamma \log_e 10)}{lambda/(gamma * log_e 10}. Hence, by noting that \eqn{S} can be rewritten as
 \deqn{
 S = \exp\{ Y \gamma \log_e 10 \},
 }{
-S = exp[ Y * \gamma * log_e 10 ],
+S = exp[ Y * gamma * log_e 10 ],
 }
-it is seen that \eqn{S} is Pareto with parameter \eqn{\lambda/(\gamma \log_e 10)}{\lambda/(\gamma * log_e 10)}, and \eqn{1 \le S < \infty}.
+it is seen that \eqn{S} is Pareto with parameter \eqn{\lambda/(\gamma \log_e 10)}{lambda/(gamma * log_e 10)}, and \eqn{1 \le S < \infty}{1 <= S < infty}.
 
 While the empirical distribution of magnitudes appears to follow an exponential distribution for smaller events, it provides a poor approximation for larger events. This is because it is not physically possible to have events with magnitudes much greater than about 9.5. Consequently, the tail of the Pareto distribution will also be too long. Hence the tapered Pareto distribution provides a more realistic description.
 }

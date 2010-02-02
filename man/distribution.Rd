@@ -6,7 +6,7 @@ This page contains general notes about fitting probability distributions to data
 }
 
 \details{
-We give examples of how the maximum likelihood parameters can be estimated using standard optimisation routines provided in the \R\ software (\code{\link{nlm}} and \code{\link{optim}}). We simply numerically maximise the sum of the logarithms of the density evaluated at each of the data points, i.e. log-likelihood function. In fact, by default, the two mentioned optimizers find the \emph{minimum}, and hence we minimise the negative log-likelihood function.
+We give examples of how the maximum likelihood parameters can be estimated using standard optimisation routines provided in the \R software (\code{\link{nlm}} and \code{\link{optim}}). We simply numerically maximise the sum of the logarithms of the density evaluated at each of the data points, i.e. log-likelihood function. In fact, by default, the two mentioned optimizers find the \emph{minimum}, and hence we minimise the negative log-likelihood function.
 
 Both optimization routines require initial starting values. The optimisation function \code{\link{optim}} uses a grid search technique, and is therefore more robust to poor starting values. The function \code{\link{nlm}} uses derivatives and the Hessian to determine the size and direction of the next step, which is generally more sensitive to poor initial values, but faster in the neighbourhood of the solution. One possible strategy is to start with \code{\link{optim}} and then use its solution as a starting value for \code{\link{nlm}}. This is done below in the example for the tapered Pareto distribution.
 

@@ -4,7 +4,7 @@
 \title{Tangshan Earthquake and Aftershock Sequence}
 \usage{data(Tangshan)}
 \description{
-The Tangshan earthquake occurred on 28 July 1976 at 03:42:53, with a magnitude of 7.9. The \code{Tangshan} data frame contains those events (455) from the Beijing Catalogue, within 100\,km of the epicentre and with magnitude 4 or greater, from the beginning of 1974 to the end of 1984.
+The Tangshan earthquake occurred on 28 July 1976 at 03:42:53, with a magnitude of 7.9. The \code{Tangshan} data frame contains those events (455) from the Beijing Catalogue, within 100 km of the epicentre and with magnitude 4 or greater, from the beginning of 1974 to the end of 1984.
 }
 \format{
   This data frame contains the following columns:

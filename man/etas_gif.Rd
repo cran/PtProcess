@@ -7,14 +7,10 @@ Ground Intensity for ETAS Model
 This function calculates the value of the ground intensity of a time-magnitude Epidemic Type Aftershock Sequence (ETAS) model. Spatial coordinates of the events are not taken into account.
 }
 
-\synopsis{
+\usage{
 etas_gif(data, evalpts, params, TT=NA, tplus=FALSE)
 }
 
-\usage{
-etas_gif(data, evalpts, params, tplus=FALSE)
-etas_gif(data, evalpts=NULL, params, TT)
-}
 \arguments{
 \item{data}{
 a data frame containing the event history, where each row represents one event. There must be columns named \code{"time"}, usually the number of days from some origin; and \code{"magnitude"} which is the event magnitude less the magnitude threshold, i.e. \eqn{M_i - M_0}{Mi - M0}.
@@ -23,16 +19,23 @@ a data frame containing the event history, where each row represents one event. 
 a \code{\link{vector}}, \code{\link{matrix}} or \code{\link{data.frame}}. If a vector, the elements will be assumed to represent the required evaluation times. Other objects must include a column named \code{"time"} that can be referred to as \code{evalpts[,"time"]}, at which the intensity function will be evaluated.
 }
 \item{params}{
-vector of parameter values in the following order: \eqn{\code{c}(\mu, A, \alpha, c, p)}{\code{c}(mu, A, alpha, c, p)}.
+vector of parameter values in the following order: \eqn{(\mu, A, \alpha, c, p)}{(mu, A, alpha, c, p)}.
 }
 \item{TT}{
 vector of length 2, being the time interval over which the integral of the ground intensity function is to be evaluated.
 }
 \item{tplus}{logical, \eqn{\lambda_g(t|{\cal H}_t)}{lambda_g(t|Ht)} is evaluated as \eqn{\lambda_g(t^+|{\cal H}_t)}{lambda_g(t^+|Ht)} if \code{TRUE}, else \eqn{\lambda_g(t^-|{\cal H}_t)}{lambda_g(t^-|Ht)}.
 }}
+
 \value{
+Two usages are as follows.
+\preformatted{
+etas_gif(data, evalpts, params, tplus=FALSE)
+etas_gif(data, evalpts=NULL, params, TT)
+}
 The first usage returns a vector containing the values of \eqn{\lambda_g(t)}{lambda_g(t)} evaluated at the specified points. In the second usage, it returns the value of the integral.
 }
+
 \details{
 The ETAS model was proposed by Ogata (1988, 1998, 1999) for the modelling of earthquake mainshock-aftershock sequences. The form of the ground intensity function used here is given by
 \deqn{

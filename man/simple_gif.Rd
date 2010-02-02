@@ -4,20 +4,19 @@
 \alias{fourier_gif}
 \alias{poly_gif}
 \alias{simple_gif}
+
 \title{
 Non-Homogeneous Poisson Processes
 }
+
 \description{
-The functions listed here are intensity functions that are not conditional on the history of the process. Each has exactly the same usage and synopsis as the function \code{simple_gif}. They are: \code{expfourier_gif}, \code{exppoly_gif}, \code{fourier_gif}, \code{poly_gif}, and \code{simple_gif}.
-}
-\synopsis{
-simple_gif(data, evalpts, params, TT=NA, tplus=FALSE)
+The functions listed here are intensity functions that are not conditional on the history of the process. Each has exactly the same \dQuote{Usage} and calling format (see section \dQuote{Value}) as the function \code{simple_gif}. They are: \code{expfourier_gif}, \code{exppoly_gif}, \code{fourier_gif}, \code{poly_gif}, and \code{simple_gif}.
 }
 
 \usage{
-simple_gif(data, evalpts, params, tplus=FALSE)
-simple_gif(data, evalpts=NULL, params, TT=NA)
+simple_gif(data, evalpts, params, TT=NA, tplus=FALSE)
 }
+
 \arguments{
 \item{data}{
 \code{NULL} or a data frame. The contents of this object are not used by these functions, though they retain this argument for consistency with other \code{\link{gif}} functions.}
@@ -35,6 +34,11 @@ vector of length 2, being the time interval over which the integral of the inten
 }
 
 \value{
+Two usages are as follows.
+\preformatted{
+simple_gif(data, evalpts, params, tplus=FALSE)
+simple_gif(data, evalpts=NULL, params, TT=NA)
+}
 The first usage returns a vector containing the values of \eqn{\lambda_g(t)}{lambda_g(t)} evaluated at the specified points. In the second usage, it returns the value of the integral.
 }
 
@@ -44,30 +48,30 @@ The models are parameterised as follows.
 \item{\code{expfourier_gif}}{
 The vector of parameters is
 \deqn{
-\code{c}(p, a_0, a_1, a_2, \cdots, a_n, b_1, b_2, \cdots, b_n)
+(p, a_0, a_1, a_2, \cdots, a_n, b_1, b_2, \cdots, b_n)
 }{
-\code{c}(p, a0, a1, a2, \dots, an, b1, b2, \dots, bn)
+(p, a0, a1, a2, ..., an, b1, b2, ..., bn)
 }
 and the intensity function is
 \deqn{
 \lambda_g(t) = \exp\left\{a_0 + \sum_{j=1}^n a_j\cos\left(\frac{2j\pi t}{p}\right) + \sum_{j=1}^n b_j\sin\left(\frac{2j\pi t}{p}\right)\right\}.
 }{
-lambda_g(t) = exp{a0 + a1*cos(2*pi*t/p) + a2*cos(4*pi*t/p) + \dots + an*cos(2*n*pi*t/p) + b1*sin(2*pi*t/p) + b2*sin(4*pi*t/p) + \dots + bn*sin(2*n*pi*t/p)}.
+lambda_g(t) = exp{a0 + a1*cos(2*pi*t/p) + a2*cos(4*pi*t/p) + ... + an*cos(2*n*pi*t/p) + b1*sin(2*pi*t/p) + b2*sin(4*pi*t/p) + ... + bn*sin(2*n*pi*t/p)}.
 }
 The length of \code{params} is \eqn{2n + 2}, and determines the order of the fitted Fourier series. The numbers of specified sine and cosine coefficients must be the same. The integral is evaluated using numerical integration, using the \R function \code{\link{integrate}}.
 }
 \item{\code{exppoly_gif}}{
 The vector of parameters is
 \eqn{
-\code{c}(b_0, b_1, b_2, \cdots, b_n)
+(b_0, b_1, b_2, \cdots, b_n)
 }{
-\code{c}(b0, b1, b2, \dots, bn)
+(b0, b1, b2, ..., bn)
 }
 and the intensity function is
 \deqn{
 \lambda_g(t) = \exp\left\{b_0 + \sum_{j=1}^n b_j t^j \right\}.
 }{
-lambda_g(t) = exp{b0 + b1*t + b2*t^2 \dots bn*t^n}.
+lambda_g(t) = exp{b0 + b1*t + b2*t^2 ... bn*t^n}.
 }
 The length of \code{params} determines the order of the fitted polynomial. The integral is evaluated using numerical integration, using the \R function \code{\link{integrate}}.
 }
@@ -78,7 +82,7 @@ The Fourier intensity function is the same as \code{expfourier_gif}, except the 
 The polynomial intensity function is the same as \code{exppoly_gif}, except the intensity function omits the exponential, and the integration is performed explicitly.
 }
 \item{\code{simple_gif}}{
-The intensity function is \eqn{\lambda_g(t) = a + b t^g}{lambda_g(t) = a + b t^g} and the vector of parameters is \eqn{\code{c}(a, b, g)}.
+The intensity function is \eqn{\lambda_g(t) = a + b t^g}{lambda_g(t) = a + b t^g} and the vector of parameters is \eqn{(a, b, g)}.
 }
 }}
 

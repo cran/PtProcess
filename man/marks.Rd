@@ -37,7 +37,7 @@ This is an example where the density of the magnitude distribution is dependent 
 \deqn{
 \mbox{shape} = 1 + \sqrt{\lambda_g(t|{\cal H}_t)} \ p_7 \,,
 }{
-shape = 1 + \sqrt{lambda_g(t|Ht)} * p_7 ,
+shape = 1 + sqrt{lambda_g(t|Ht)} * p_7 ,
 }
 where \eqn{p_7} (\eqn{p_7 > 0}) is a free estimable parameter, and parameter \eqn{p_6} is the scale parameter. Hence when \eqn{\lambda_g(t|{\cal H}_t)}{lambda_g(t|Ht)} is small, the magnitude distribution returns to an approximate exponential distribution with an approximate rate of \eqn{p_6} (i.e. Gutenberg Richter law).
 \preformatted{
