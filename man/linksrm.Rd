@@ -38,7 +38,7 @@ rexptrunc_mark <- function(ti, data, params){
 
 x <- linksrm(data=NULL,
              gif=linksrm_gif,
-             mark=list(NULL, rexptrunc_mark),
+             marks=list(NULL, rexptrunc_mark),
              params=p,
              gmap=expression(params[1:8]),
              mmap=expression(params[9:10]),

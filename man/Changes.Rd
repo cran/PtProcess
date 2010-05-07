@@ -49,6 +49,7 @@ This page contains a listing of recent changes made to functions, and known gene
 
 \item \code{\link{Phuket}}: Additional data, until the beginning of 2009, have been added. The magnitude is now the maximum of the body wave and surface wave magnitudes, \eqn{m_b} and \eqn{M_s}, respectively. Earlier it was simply \eqn{m_b}. (01 Feb 2010)
 
+\item \code{\link{simulate.linksrm}}, \code{\link{simulate.mpp}}, \code{\link{logLik.mpp}}: Inconsistency in nomenclature between \dQuote{mark} and \dQuote{marks}, will standardise on the plural. (07 May 2010)
 }}
 
 
@@ -91,7 +92,7 @@ params <- c(-1.5, 0.01, 0.8, bvalue*log(10))
 #   --- New Method, no mark density ---
 x1 <- mpp(data=NULL,
           gif=srm_gif,
-          mark=list(NULL, rexp_mark),
+          marks=list(NULL, rexp_mark),
           params=params,
           gmap=expression(params[1:3]),
           mmap=expression(params[4]),
@@ -139,7 +140,7 @@ params <- c(-2.5, 0.01, 0.8, bvalue*log(10))
 
 x1 <- mpp(data=NULL,
           gif=srm_gif,
-          mark=list(dexp_mark, rexp_mark),
+          marks=list(dexp_mark, rexp_mark),
           params=params,
           gmap=expression(params[1:3]),
           mmap=expression(params[4]),

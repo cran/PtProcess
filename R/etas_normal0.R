@@ -5,6 +5,7 @@ function(data, evalpts, params, fixedparams, TT = NA, tplus = FALSE)
 #   only exponential term
 #   major and minor axes in direction of x and y but with
 #   different scaling factors
+#   message("NOTE: 'etas.normal0' and its methods are still under development and may change.")
     if (is.null(data)) data <- cbind(time = Inf, magnitude = 0)
     #------------------------------------------------------------
     if(any(is.na(TT))) {

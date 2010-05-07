@@ -42,7 +42,7 @@ params <- c(-2.5, 0.01, 0.8, bvalue*log(10))
 
 x <- mpp(data=NULL,
          gif=srm_gif,
-         mark=list(NULL, rexp_mark),
+         marks=list(NULL, rexp_mark),
          params=params,
          gmap=expression(params[1:3]),
          mmap=expression(params[4]),

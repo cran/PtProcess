@@ -33,7 +33,7 @@ bvalue <- 1
 
 x <- mpp(data=Ogata,
          gif=etas_gif,
-         mark=list(NULL, NULL),
+         marks=list(NULL, NULL),
          params=p,
          gmap=expression(params[1:5]),
          mmap=NULL,

@@ -44,7 +44,7 @@ simulate.linksrm <- function(object, nsim=1, seed=NULL, max.rate=NA,
             bound <- cumsum(bound)/sum(bound)
             newevent$region <- sum(bound < runif(1, 0, 1)) + 1
             #    simulate other marks
-            newevent <- c(newevent, object$mark[[2]](ti, data, mparams))
+            newevent <- c(newevent, object$marks[[2]](ti, data, mparams))
             newevent <- as.data.frame(newevent)
             data <- rbind(data, newevent)
             if (!is.null(stop.condition))

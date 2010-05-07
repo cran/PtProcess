@@ -52,7 +52,7 @@ simulate.mpp <- function(object, nsim=1, seed=NULL, max.rate=NA,
             #    now generate accompanying marks
             newevent <- list()
             newevent$time <- ti
-            newevent <- c(newevent, object$mark[[2]](ti, data, mparams))
+            newevent <- c(newevent, object$marks[[2]](ti, data, mparams))
             newevent <- as.data.frame(newevent)
             data <- rbind(data, newevent)
             if (!is.null(stop.condition))

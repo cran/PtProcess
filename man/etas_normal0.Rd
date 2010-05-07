@@ -98,7 +98,7 @@ etas_tmp <- function(data, evalpts, params, TT = NA, tplus = FALSE){
 
 x <- mpp(data=Phuket,
          gif=etas_tmp,
-         mark=list(NULL, NULL),
+         marks=list(NULL, NULL),
          params=params,
          gmap=expression(params),
          mmap=NULL,
@@ -126,11 +126,6 @@ initial <- log(params)
 #  it will take about 10 minutes
 z <- nlm(neglogLik, initial, object=x, pmap=allmap,
          print.level=2, iterlim=5, SNOWcluster=cl)
-
-# z <- nlm(neglogLik, params, object=x, typsize=abs(params),
-#          print.level=2, iterlim=5, hessian=TRUE, 
-#          SNOWcluster=cl)
-# stderr <- sqrt(diag(solve(z$hessian)))
 
 \dontrun{
 if (!is.null(cl)){

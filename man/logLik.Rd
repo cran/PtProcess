@@ -71,7 +71,7 @@ params <- c(-2.5, 0.01, 0.8, bvalue*log(10))
 #   calculate log-likelihood excluding the mark density term
 x1 <- mpp(data=NULL,
           gif=srm_gif,
-          mark=list(NULL, rexp_mark),
+          marks=list(NULL, rexp_mark),
           params=params,
           gmap=expression(params[1:3]),
           mmap=expression(params[4]),
@@ -82,7 +82,7 @@ print(logLik(x1))
 #   calculate log-likelihood including the mark density term
 x2 <- mpp(data=x1$data,
           gif=srm_gif,
-          mark=list(dexp_mark, rexp_mark),
+          marks=list(dexp_mark, rexp_mark),
           params=params,
           gmap=expression(params[1:3]),
           mmap=expression(params[4]),

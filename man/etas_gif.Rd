@@ -65,7 +65,7 @@ TT <- c(0, 4018)
 
 x <- mpp(data=Tangshan,
          gif=etas_gif,
-         mark=list(rexp_mark, rexp_mark),
+         marks=list(rexp_mark, rexp_mark),
          params=p,
          gmap=expression(params),
          mmap=expression(bvalue*log(10)),

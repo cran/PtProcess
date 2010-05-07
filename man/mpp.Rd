@@ -60,7 +60,7 @@ params <- c(0.007, 2.3, 0.98, 0.008, 0.94, 1.25, 0.2)
 
 x <- mpp(data=Tangshan,
          gif=etas_gif,
-         mark=list(dmagn_mark, NULL),
+         marks=list(dmagn_mark, NULL),
          params=params,
          gmap=expression(params[1:5]),
          mmap=expression(params[1:7]),

@@ -37,11 +37,11 @@ logLik.mpp <- function(object, SNOWcluster=NULL, ...){
     } else L1 <- sum(log(cif(data, evalpts0, gparams)))
     #---------------------------------------------
     L2 <- sum(cif(data, NULL, gparams, TT=TT))
-    dmark <- object$mark[[1]]
-    if (is.null(dmark))
+    dmarks <- object$marks[[1]]
+    if (is.null(dmarks))
         L3 <- 0
     else
-        L3 <- sum(dmark(data, data, mparams))
+        L3 <- sum(dmarks(data, data, mparams))
     LL <- L1 - L2 + L3
     return(LL)
 }
