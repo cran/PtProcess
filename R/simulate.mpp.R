@@ -7,9 +7,13 @@ simulate.mpp <- function(object, nsim=1, seed=NULL, max.rate=NA,
     gif <- object$gif
     TT <- object$TT
     if (!is.null(data)) {
-        use <- (data[, "time"] < TT[1])
+###  original line
+###     use <- (data[, "time"] < TT[1])
+        use <- (data[, "time"] <= TT[1])
         if (sum(use) == 0) data <- NULL
-        else data <- data[use, c("time", "magnitude")]
+        else data <- data[use, ]
+###     else data <- data[use, c("time", "magnitude")]
+###  original line above
     }
     if (!is.null(seed)) set.seed(seed)
     ti <- TT[1]

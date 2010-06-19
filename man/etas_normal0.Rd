@@ -55,11 +55,11 @@ lambda(t,x,y|Ht) = mu + A SUM_{i: ti < t} exp{beta(Mi-Mo)} g(x-xi, y-yi) f(t-ti)
 }
 Note that the parameters \eqn{\mu}{mu} and \eqn{A} are not the same as those in \code{\link{etas_gif}}. That function is the spatial integral of the above, and so, for example, \eqn{\widetilde{\mu} = (X_2-X_1)(Y_2-Y_1)\mu}{tilde{mu} = (X2-X1)(Y2-Y1)mu} where \eqn{\widetilde{\mu}}{tilde{mu}} is the \eqn{\mu}{mu} in \code{\link{etas_gif}}. Ogata & Zhuang (2006) have discussed this and other formulations of the spatial ETAS models.
 
-This can be thought of as a template function, i.e. a function that can be used to define the required spatial intensity function. It is probably most efficient to embed the boundaries of the region under analysis into the function. Say we want the scaling for latitude and longitude to be the same (i.e. \eqn{d=d_x=d_y}), \eqn{\beta=0}{beta=0}, and the analysed region is contained within \eqn{164^\circ}{164deg}E--\eqn{182^\circ}{182deg}E, and \eqn{48^\circ}{48deg}S--\eqn{35^\circ}{35deg}S. This is then the same as case (5) in Ogata & Zhuang (2006) with their \eqn{S_i}{Si} being the identity matrix. The conditional intensity function would then be defined as follows.
+This can be thought of as a template function, i.e. a function that can be used to define the required spatial intensity function. It is probably most efficient to embed the boundaries of the region under analysis into the function. Say we want the scaling for latitude and longitude to be the same (i.e. \eqn{d=d_x=d_y}), \eqn{\beta=0}{beta=0}, and the analysed region is contained within \eqn{89^\circ}{89deg}E--\eqn{105^\circ}{105deg}E, and \eqn{5^\circ}{5deg}S--\eqn{16^\circ}{16deg}N. This is then the same as case (5) in Ogata & Zhuang (2006) with their \eqn{S_i}{Si} being the identity matrix. The conditional intensity function would then be defined as follows.
 \preformatted{
 etas_tmp <- function(data, evalpts, params, TT=NA, tplus=FALSE)
     etas_normal0(data, evalpts, params=c(params, params[6], 0),
-                 fixedparams=c(164, 182, -48, -35),
+                 fixedparams=c(89, 105, -5, 16),
                  TT=TT, tplus=tplus)
 }
 The vector \code{params} of the new function \code{etas_tmp} is \eqn{(\mu, A, \alpha, c, p, d)}{(mu, A, alpha, c, p, d)}.
@@ -85,15 +85,15 @@ data(Phuket)
 Phuket$magnitude <- Phuket$magnitude - 4.95
 
 TT <- c(0, 1827)
-params <- c(0.000121, 34.66, 0.61, 0.0081, 1.0, 0.023)
+params <- c(0.0001, 73, 1.3, 0.01, 1.0, 0.01)
 
-# params <- c(nrow(Phuket)/(TT[2]-TT[1])/2, 100, 1, 0.01, 1.2, 0.01)
-
-etas_tmp <- function(data, evalpts, params, TT = NA, tplus = FALSE){
-    #   params = c(mu, A, alpha, c, p, dx, dy, beta)
-    #   dx=dy and alpha=beta
-    params <- params[c(1:5, 6, 6, 3)]
-    etas_normal0(data, evalpts, params, c(89, 105, -5, 16), TT, tplus)
+etas_tmp <- function(data, evalpts, params, TT=NA, tplus=FALSE){
+    # etas_normal0 params = c(mu, A, alpha, c, p, dx, dy, beta)
+    # etas_tmp params = c(mu, A, alpha, c, p, d)
+    # want: d=dx=dy and alpha=beta
+    etas_normal0(data, evalpts, params=c(params, params[6], 0),
+                 fixedparams=c(89, 105, -5, 16),
+                 TT=TT, tplus=tplus)
 }
 
 x <- mpp(data=Phuket,
@@ -116,14 +116,16 @@ allmap <- function(y, p){
 cl <- NULL
 \dontrun{
 if (require(snow)){
-    cl <- makeSOCKcluster(c("localhost", "horoeka.localdomain", 
-                            "horoeka.localdomain", "localhost"))
+    cl <- makeSOCKcluster(c("horoeka.localdomain", "horoeka.localdomain",
+                            "kowhai.localdomain", "kowhai.localdomain",
+                            "localhost", "localhost"))
     clusterExport(cl, c("etas_normal0"))
-}}
+}
+}
 
 initial <- log(params)
 #  set iterlim larger to converge satisfactorily
-#  it will take about 10 minutes
+#  needs about 47 iterations
 z <- nlm(neglogLik, initial, object=x, pmap=allmap,
          print.level=2, iterlim=5, SNOWcluster=cl)
 
@@ -131,15 +133,23 @@ z <- nlm(neglogLik, initial, object=x, pmap=allmap,
 if (!is.null(cl)){
     stopCluster(cl)
     rm(cl)
-}}
+}
+}
 
 x <- allmap(x, z$estimate)
 print(z$code)
 
 print(x$params)
-#  MLE = (0.0001210 34.662 0.6143 0.008103 1.0012 0.02294)
+#  MLE = (1.139316e-04 7.258019e+01 1.304519e+00 8.839539e-03
+#         9.999858e-01 9.299687e-03)
 
 print(logLik(x))
+# -2954.28
+
+#   The integral term should be equal to the number
+#   of events in TT (1248)
+print(sum((x$data$time > TT[1]) & (x$data$time < TT[2])))
+print(etas_tmp(x$data, NULL, x$params, TT=TT))
 }
 
 \keyword{models}

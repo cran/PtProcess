@@ -77,7 +77,7 @@ function(data, evalpts, params, fixedparams, TT = NA, tplus = FALSE)
         for(k in 1:2) {
             use <- (times < TT[k])
             if(any(use)) {
-                magns <- exp((alpha+beta)*data[use,"magnitude"])
+                magns <- exp((alpha)*data[use,"magnitude"])
                 sqrtmagns <- sqrt(magns)
                 Fx <- pnorm(X2-data[use,"longitude"], sd=sqrt(dx)*sqrtmagns) -
                       pnorm(X1-data[use,"longitude"], sd=sqrt(dx)*sqrtmagns)
@@ -87,7 +87,7 @@ function(data, evalpts, params, fixedparams, TT = NA, tplus = FALSE)
                 if(P!=1) omoriint <- (1 - (1 + (TT[k] -
                                  times[use])/CC)^(-P + 1))/(P - 1)
                 else omoriint <- log(1 + (TT[k] - times[use])/CC)
-                S[k] <- sum(spatialint*omoriint)
+                S[k] <- sum(exp(beta*data[use,"magnitude"])*spatialint*omoriint)
             }
             else S[k] <- 0
         }

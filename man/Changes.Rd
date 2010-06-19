@@ -50,6 +50,10 @@ This page contains a listing of recent changes made to functions, and known gene
 \item \code{\link{Phuket}}: Additional data, until the beginning of 2009, have been added. The magnitude is now the maximum of the body wave and surface wave magnitudes, \eqn{m_b} and \eqn{M_s}, respectively. Earlier it was simply \eqn{m_b}. (01 Feb 2010)
 
 \item \code{\link{simulate.linksrm}}, \code{\link{simulate.mpp}}, \code{\link{logLik.mpp}}: Inconsistency in nomenclature between \dQuote{mark} and \dQuote{marks}, will standardise on the plural. (07 May 2010)
+
+\item \code{\link{simulate.mpp}}: Two bugs: \code{use <- (data[, "time"] < TT[1])} changed to \code{use <- (data[, "time"] <= TT[1])}, and \code{else data <- data[use, c("time", "magnitude")]} changed to \code{else data <- data[use, ]}. (18 Jun 2010)
+
+\item \code{\link{etas_normal0}}: Errors in some terms involving \code{beta}. (18 Jun 2010)
 }}
 
 

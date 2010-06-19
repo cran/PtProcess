@@ -1,6 +1,6 @@
 Package: PtProcess
-Version: 3.2-3
-Date: 2010-05-07
+Version: 3.2-4
+Date: 2010-06-19
 Title: Time Dependent Point Process Modelling
 Author: David Harte
 Maintainer: David Harte <david@statsresearch.co.nz>
@@ -13,6 +13,6 @@ Suggests: snow
 License: GPL (>= 2)
 URL: http://cran.at.r-project.org/web/packages/PtProcess,
         http://www.statsresearch.co.nz/software.html
-Packaged: 2010-05-06 22:53:45 UTC; david
+Packaged: 2010-06-19 00:04:45 UTC; david
 Repository: CRAN
-Date/Publication: 2010-05-07 09:11:37
+Date/Publication: 2010-06-21 08:03:45
