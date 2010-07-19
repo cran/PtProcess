@@ -83,4 +83,8 @@ It would be better if the objects \code{St1} and \code{St2} could be dealt with 
 General details about the structure of ground intensity functions are given in the topic \code{\link{gif}}.
 }
 
+\references{
+Cited references are listed on the \link{PtProcess} manual page.
+}
+
 \keyword{models}

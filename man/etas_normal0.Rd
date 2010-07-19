@@ -79,6 +79,10 @@ The function has two forms of usage as described in \code{\link{gif}}. The first
 General details about the structure of ground intensity functions are given in the topic \code{\link{gif}}.
 }
 
+\references{
+Cited references are listed on the \link{PtProcess} manual page.
+}
+
 \examples{
 data(Phuket)
 #    magnitudes are rounded to 1 dp

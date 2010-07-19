@@ -54,6 +54,8 @@ This page contains a listing of recent changes made to functions, and known gene
 \item \code{\link{simulate.mpp}}: Two bugs: \code{use <- (data[, "time"] < TT[1])} changed to \code{use <- (data[, "time"] <= TT[1])}, and \code{else data <- data[use, c("time", "magnitude")]} changed to \code{else data <- data[use, ]}. (18 Jun 2010)
 
 \item \code{\link{etas_normal0}}: Errors in some terms involving \code{beta}. (18 Jun 2010)
+
+\item Minor citation and reference inclusion changes to manual pages. (19 Jul 2010)
 }}
 
 
@@ -79,6 +81,10 @@ This page contains a listing of recent changes made to functions, and known gene
 
 \item A tidy way to pass the values of the \code{gif} function into the mark distributions, if required.
 }}
+
+\references{
+Cited references are listed on the \link{PtProcess} manual page.
+}
 
 \examples{
 #    SRM: magnitude is iid exponential with bvalue=1

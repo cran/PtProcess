@@ -8,7 +8,7 @@ This topic gives an introductory overview to the package \pkg{PtProcess}. Links 
 }
 
 \section{Introduction}{
-This package contains routines for the fitting of \emph{time dependent} point process models, particularly marked processes with \dQuote{jumps}. These models have particular application to earthquake data. A detailed theoretical background to these and other point process models can be found in Daley & Vere-Jones (2003, 2008).
+This package contains routines for the fitting of \emph{time dependent} point process models, particularly marked processes with \dQuote{jumps}. These models have particular application to earthquake data. A detailed theoretical background to these and other point process models can be found in Daley & Vere-Jones (2003, 2008). An overview of the package structure is given by Harte (2010).
 
 The direction of the development of the package has been influenced by our research on the application of point process models to seismology. The package was originally written for S-PLUS, being part of the Statistical Seismology Library (Harte, 1998; Brownrigg & Harte, 2005). The package \pkg{ptproc} by Peng (2002, 2003) analyses multi-dimensional point process models, and the package \pkg{spatstat} by Baddeley et al (2005, 2005a, 2008) analyses spatial point processes.
 
@@ -52,9 +52,9 @@ The package is based on an S-PLUS package which was commenced at Victoria Univer
 \references{
 Aalen, O.O. & Hoem, J.M. (1978). Random time changes for multivariate counting processes. \emph{Scandinavian Journal of Statistics} \bold{5}, 81--101.
 
-Baddeley, A. (2008). \emph{Open source software for spatial statistics.} \url{http://www.spatstat.org/}.
+Baddeley, A. (2008). \emph{Open source software for spatial statistics.} URL: \url{http://www.spatstat.org/}.
 
-Baddeley, A. & Turner, R. (2005) Spatstat: an R package for analyzing spatial point patterns. \emph{Journal of Statistical Software} \bold{12(6)}, 1--42. \url{http://www.jstatsoft.org}, ISSN: 1548-7660.
+Baddeley, A. & Turner, R. (2005). Spatstat: an R package for analyzing spatial point patterns. \emph{Journal of Statistical Software} \bold{12(6)}, 1--42. URL: \url{http://www.jstatsoft.org/v12/i6/}.
 
 Baddeley, A.; Turner, R.; Moller, J. & Hazelton, M. (2005a). Residual analysis for spatial point processes (with discussion). \emph{J. R. Statist. Soc. B} \bold{67(5)}, 617--666.  DOI: \url{http://dx.doi.org/10.1111/j.1467-9868.2005.00519.x}.
 
@@ -62,13 +62,15 @@ Bebbington, M.S. & Harte, D.S. (2001). On the statistics of the linked stress re
 
 Bebbington, M.S. & Harte, D.S. (2003). The linked stress release model for spatio-temporal seismicity: formulations, procedures and applications. \emph{Geophysical Journal International} \bold{154}, 925--946. DOI: \url{http://dx.doi.org/10.1046/j.1365-246X.2003.02015.x}.
 
-Brownrigg, R. & Harte, D.S. (2005). Using \R for statistical seismology. \emph{\R News} \bold{5(1)}, 31--35.
+Brownrigg, R. & Harte, D.S. (2005). Using \R for statistical seismology. \emph{\R News} \bold{5(1)}, 31--35. URL: \url{http://cran.r-project.org/doc/Rnews/Rnews_2005-1.pdf}
 
-Daley, D.J. & Vere-Jones, D. (2003). \emph{An Introduction to the Theory of Point Processes. Volume I: Elementary Theory and Methods. Second Edition.} Springer-Verlag, New York. \url{http://books.google.com/?isbn=0387955410}.
+Daley, D.J. & Vere-Jones, D. (2003). \emph{An Introduction to the Theory of Point Processes. Volume I: Elementary Theory and Methods. Second Edition.} Springer-Verlag, New York. URL: \url{http://books.google.com/?isbn=0387955410}.
 
-Daley, D.J. & Vere-Jones, D. (2008). \emph{An Introduction to the Theory of Point Processes. Volume II: General Theory and Structure. Second Edition.} Springer-Verlag, New York. \url{http://books.google.com/?isbn=9780387213378}.
+Daley, D.J. & Vere-Jones, D. (2008). \emph{An Introduction to the Theory of Point Processes. Volume II: General Theory and Structure. Second Edition.} Springer-Verlag, New York. URL: \url{http://books.google.com/?isbn=9780387213378}.
 
 Harte, D. (1998). Documentation for the Statistical Seismology Library. School of Mathematical and Computing Sciences Research Report No. 98--10 (Updated Edition June 1999), Victoria University of Wellington. (ISSN 1174--4545)
+
+Harte, D. (2010). PtProcess: An \R package for modelling marked point processes indexed by time. \emph{Journal of Statistical Software} \bold{35(8)}, 1--32. URL: \url{http://www.jstatsoft.org/v35/i08/}.
 
 Kagan, Y. & Schoenberg, F. (2001). Estimation of the upper cutoff parameter for the tapered Pareto distribution. \emph{Journal of Applied Probability} \bold{38A}, 158--175. DOI: \url{http://dx.doi.org/10.1239/jap/1085496599}.
 
@@ -78,15 +80,15 @@ Ogata, Y. (1981). On Lewis' simulation method for point processes. \emph{IEEE Tr
 
 Ogata, Y. (1988). Statistical models for earthquake occurrences and residual analysis for point processes. \emph{J. Amer. Statist. Assoc.} \bold{83(401)}, 9--27. DOI: \url{http://dx.doi.org/10.2307/2288914}.
 
-Ogata, Y. (1998). Space-time point-process models for earthquake occurrences. \emph{Ann. Instit. Statist. Math. (Tokyo)} \bold{50(2)}, 379--402. DOI: \url{http://dx.doi.org/10.1023/A:1003403601725}.
+Ogata, Y. (1998). Space-time point-process models for earthquake occurrences. \emph{Ann. Instit. Statist. Math.} \bold{50(2)}, 379--402. DOI: \url{http://dx.doi.org/10.1023/A:1003403601725}.
 
 Ogata, Y. (1999). Seismicity analysis through point-process modeling: a review. \emph{Pure and Applied Geophysics} \bold{155}, 471--507. DOI: \url{http://dx.doi.org/10.1007/s000240050275}.
 
 Ogata, Y. & Zhuang, J.C. (2006). Space-time ETAS models and an improved extension. \emph{Tectonophysics} \bold{413(1-2)}, 13--23. DOI: \url{http://dx.doi.org/10.1016/j.tecto.2005.10.016}.
 
-Peng, R. (2002). Multi-dimensional Point Process Models. Package \dQuote{ptproc}, \url{http://www.biostat.jhsph.edu/~rpeng}.
+Peng, R. (2002). Multi-dimensional Point Process Models. Package \dQuote{ptproc}, URL: \url{http://www.biostat.jhsph.edu/~rpeng}.
 
-Peng, R. (2003). Multi-dimensional point process models in R. \emph{Journal of Statistical Software} \bold{8(16)}, 1--27. \url{http://www.jstatsoft.org}.
+Peng, R. (2003). Multi-dimensional point process models in R. \emph{Journal of Statistical Software} \bold{8(16)}, 1--27. URL: \url{http://www.jstatsoft.org/v8/i16/}.
 
 Reid, H.F. (1910). The mechanism of the earthquake. In \emph{The California Earthquake of April 18, 1906, Report of the State Earthquake Investigation Commission} \bold{2}, 16--28. Carnegie Institute of Washington, Washington D.C.
 

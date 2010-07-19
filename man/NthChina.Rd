@@ -16,4 +16,8 @@ A data frame with 65 rows, each representing an earthquake event, with the follo
 \item{region}{1, 2, 3, or 4; being the region of the event.}
 }}
 
+\references{
+Cited references are listed on the \link{PtProcess} manual page.
+}
+
 \keyword{datasets}

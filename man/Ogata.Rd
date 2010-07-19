@@ -15,6 +15,10 @@ A data frame with 100 rows (earthquake events) in the time interval (0, 800). It
 \item{magnitude}{number of magnitude units \emph{above} 3.5.}
 }}
 
+\references{
+Cited references are listed on the \link{PtProcess} manual page.
+}
+
 \examples{
 data(Ogata)
 plot(Ogata$time, Ogata$magnitude + 3.5, type="h")

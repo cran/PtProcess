@@ -64,6 +64,10 @@ General details about the structure of conditional intensity functions are given
 Runs much slower than \code{\link{linksrm_gif}}. Should set up matrices \code{St1} and \code{St2} as in \code{\link{linksrm_gif}}.
 }
 
+\references{
+Cited references are listed on the \link{PtProcess} manual page.
+}
+
 \examples{
 #  Treating North China as one region
 

@@ -35,6 +35,10 @@ If the proposed point process model is correct, then the transformed time points
 See Baddeley et al (2005) and Zhuang (2006) for extensions of these methodologies.
 }
 
+\references{
+Cited references are listed on the \link{PtProcess} manual page.
+}
+
 \examples{
 TT <- c(0, 1000)
 bvalue <- 1

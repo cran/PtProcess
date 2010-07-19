@@ -52,6 +52,10 @@ For example, we may want to simulate until the first earthquake with a magnitude
 The returned value is an object of the same class as \code{object}. It will contain all events prior to \code{object$TT[1]} in \code{object} and all subsequently simulated events.
 }
 
+\references{
+Cited references are listed on the \link{PtProcess} manual page.
+}
+
 \examples{
 TT <- c(0, 1000)
 bvalue <- 1

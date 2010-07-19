@@ -55,6 +55,10 @@ where \eqn{t_i}{ti} denotes the event times and the summation is taken over thos
 General details about the structure of ground intensity functions are given in the topic \code{\link{gif}}.
 }
 
+\references{
+Cited references are listed on the \link{PtProcess} manual page.
+}
+
 \examples{
 #  Tangshan: ground intensity and magnitude time plots
 
