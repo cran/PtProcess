@@ -56,6 +56,8 @@ This page contains a listing of recent changes made to functions, and known gene
 \item \code{\link{etas_normal0}}: Errors in some terms involving \code{beta}. (18 Jun 2010)
 
 \item Minor citation and reference inclusion changes to manual pages. (19 Jul 2010)
+
+\item \code{\link{simulate.mpp}}: Bug fix on 18 June 2010 induced another bug; \code{data <- rbind(data, newevent)} changed to \code{data <- rbind(data[, names(newevent)], newevent)}. (11 Dec 2010)
 }}
 
 

@@ -13,7 +13,7 @@ simulate.mpp <- function(object, nsim=1, seed=NULL, max.rate=NA,
         if (sum(use) == 0) data <- NULL
         else data <- data[use, ]
 ###     else data <- data[use, c("time", "magnitude")]
-###  original line above
+###  original line above, see below too
     }
     if (!is.null(seed)) set.seed(seed)
     ti <- TT[1]
@@ -58,7 +58,9 @@ simulate.mpp <- function(object, nsim=1, seed=NULL, max.rate=NA,
             newevent$time <- ti
             newevent <- c(newevent, object$marks[[2]](ti, data, mparams))
             newevent <- as.data.frame(newevent)
-            data <- rbind(data, newevent)
+###  original line
+###         data <- rbind(data, newevent)
+            data <- rbind(data[, names(newevent)], newevent)
             if (!is.null(stop.condition))
                 if (stop.condition(data)) break
         }

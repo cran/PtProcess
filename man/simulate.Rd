@@ -49,7 +49,7 @@ For example, we may want to simulate until the first earthquake with a magnitude
 }
 
 \value{
-The returned value is an object of the same class as \code{object}. It will contain all events prior to \code{object$TT[1]} in \code{object} and all subsequently simulated events.
+The returned value is an object of the same class as \code{object}. It will contain all events prior to \code{object$TT[1]} in \code{object$data} and all subsequently simulated events. Variables (columns) in \code{object$data} will be restricted to \code{"time"} and those for which a mark is simulated.
 }
 
 \references{
