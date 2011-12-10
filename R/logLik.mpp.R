@@ -17,11 +17,10 @@ logLik.mpp <- function(object, SNOWcluster=NULL, ...){
                 cif(data, evalpts, params, TT=NA, tplus=FALSE)
             n <- nrow(evalpts0)
             m <- length(SNOWcluster)
-#           possible adjustment for different CPU speeds
-#           cpu.spd would be func arg, vector of rel spds
-#           if (is.null(cpu.spd)) cpu.spd <- rep(1/m, m)
-#           else cpu.spd <- cpu.spd/sum(cpu.spd)
-            cpu.spd <- rep(1/m, m)
+            #  adjustment for different CPU speeds
+            if (is.null(attr(SNOWcluster, "cpu.spd"))) cpu.spd <- rep(1, m)
+            else cpu.spd <- attr(SNOWcluster, "cpu.spd")
+            cpu.spd <- cpu.spd/sum(cpu.spd)
             N <- n*(n+1)/2
 #           n1 <- round(sqrt(2*N/m))
             n1 <- round(sqrt(2*N*cpu.spd[1]))

@@ -1,3 +1,48 @@
-# Export all names
-exportPattern(".")
+export(
+    dpareto,
+    ppareto,
+    qpareto,
+    rpareto,
+
+    dtappareto,
+    ptappareto,
+    qtappareto,
+    rtappareto,
+    ltappareto,
+
+    etas_gif,
+    linksrm_gif,
+    linksrm1_gif,
+    expfourier_gif,
+    exppoly_gif,
+    fourier_gif,
+    poly_gif,
+    simple_gif,
+    srm_gif,
+
+    dexp_mark,
+    rexp_mark,
+
+    etas_normal0,
+    linksrm_convert,
+    linksrm,
+    mpp,
+    neglogLik)
+
+importFrom(stats, simulate, logLik)
+
+#   methods for class "linksrm"
+S3method(logLik, linksrm)
+S3method(plot, linksrm)
+S3method(residuals, linksrm)
+S3method(simulate, linksrm)
+S3method(summary, linksrm)
+
+#   methods for class "mpp"
+S3method(logLik, mpp)
+S3method(plot, mpp)
+S3method(print, summary.mpp)
+S3method(residuals, mpp)
+S3method(simulate, mpp)
+S3method(summary, mpp)
 

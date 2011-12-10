@@ -25,9 +25,9 @@ Value of the log-likelihood.
 }
 
 \section{Parallel Processing}{
-Parallel processing can be enabled to calculate the term \eqn{\sum_i \log \lambda_g(t_i|{\cal H}_{t_i})}{SUM_i log lambda_g(ti|H_ti)}. Generally, the amount of computational work involved in calculating \eqn{\lambda_g(t|{\cal H}_t)}{lambda_g(t|H_t)} is much greater if there are more events in the process history prior to \eqn{t} than in the case where there are fewer events. Given \eqn{m} nodes, the required evaluation points are divided into \eqn{m} groups, not of equal number, but of roughly equal amount of work, taking into account the amount of \dQuote{history} prior to each event. Currently this division is very basic, and assumes that all nodes run at a roughly comparable speed.
+Parallel processing can be enabled to calculate the term \eqn{\sum_i \log \lambda_g(t_i|{\cal H}_{t_i})}{SUM_i log lambda_g(ti|H_ti)}. Generally, the amount of computational work involved in calculating \eqn{\lambda_g(t|{\cal H}_t)}{lambda_g(t|H_t)} is much greater if there are more events in the process history prior to \eqn{t} than in the case where there are fewer events. Given \eqn{m} nodes, the required evaluation points are divided into \eqn{m} groups, taking into account the amount of \dQuote{history} prior to each event and the CPU speed of the node (see below).
 
-If the communication between nodes is slow and the dataset is small, then the time taken to allocate the work to the various nodes may in fact take more time than simply using one processor to perform all of the calculations.
+We have assumed that communication between nodes is fairly slow, and hence it is best to allocate the work in large chunks and minimise communication. If the dataset is small, then the time taken to allocate the work to the various nodes may in fact take more time than simply using one processor to perform all of the calculations.
 
 The required steps in initiating parallel processing are as follows.
 \preformatted{
@@ -40,7 +40,7 @@ cl <- makeSOCKcluster(c("localhost", "horoeka.localdomain",
                         "horoeka.localdomain", "localhost"))
 
 #   A more general setup: Totara is Fedora, Rimu is Debian:
-#   Use 2 procesors in Totara, 1 in Rimu:
+#   Use 2 processors on Totara, 1 on Rimu:
 totara  <- list(host="localhost",
                 rscript="/usr/lib/R/bin/Rscript",
                 snowlib="/usr/lib/R/library")
@@ -48,6 +48,11 @@ rimu    <- list(host="rimu.localdomain",
                 rscript="/usr/lib/R/bin/Rscript",
                 snowlib="/usr/local/lib/R/site-library")
 cl <- makeCluster(list(totara, totara, rimu), type="SOCK")
+
+#   Relative CPU speeds of the nodes can be added as an attribute
+#   Say rimu runs at half the speed of totara
+#   (default assumes all run at same speed)
+attr(cl, "cpu.spd") <- c(1, 1, 0.5)
 
 #   then define the required model object, e.g. see topic "mpp"
 #   say the model object is called x

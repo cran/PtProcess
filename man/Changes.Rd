@@ -60,6 +60,10 @@ This page contains a listing of recent changes made to functions, and known gene
 \item \code{\link{simulate.mpp}}: Bug fix on 18 June 2010 induced another bug; \code{data <- rbind(data, newevent)} changed to \code{data <- rbind(data[, names(newevent)], newevent)}. (11 Dec 2010)
 
 \item Implement very basic NAMESPACE. (5 Nov 2011)
+
+\item List functions explicitly in NAMESPACE; ``\code{LazyData: no}'' and ``\code{ZipData: no}'' in DESCRIPTION file. (9 Dec 2011)
+
+\item \code{\link{logLik.mpp}}: Enable one to specify the relative CPU speeds of the nodes when parallel processing. (9 Dec 2011)
 }}
 
 

@@ -1,5 +1,5 @@
-9a89e48581837ab479eeb8ac40ca7684 *DESCRIPTION
-4b1b27089c4f805908e12e604cf7e607 *NAMESPACE
+fbcca245d22e968707969d9808abff8e *DESCRIPTION
+4b76b87c0eb80ff44a87680003f069a9 *NAMESPACE
 ed0af9252eedcf3f450c84b39e52c4ad *R/dexp_mark.R
 e4e930b4fb823fcd8e53e36fb7fb456d *R/dpareto.R
 51c946480eea3c2578f7e198bfaf487e *R/etas_gif.R
@@ -8,7 +8,7 @@ b6cdea988b11a46a53942aaa78af24db *R/linksrm.R
 7394703f0bac2ff54245581d3b5949f9 *R/linksrm_convert.R
 e58622b097cf1af0da43d823314f0c2a *R/linksrm_gif.R
 617ba5bffaa196305b6f18cde52e5203 *R/logLik.linksrm.R
-82e34a95c7f21c10bed836d3e424291e *R/logLik.mpp.R
+49194d7ae17ad7043bf6022f86f65029 *R/logLik.mpp.R
 2405953b9582f80533118221621b9153 *R/mpp.R
 bf31d5e525ffadca215240beb0053793 *R/neglogLik.R
 b8db9fdcea9102a6424ea0edbcbaca18 *R/plot.linksrm.R
@@ -32,8 +32,8 @@ fd4fb015f89795c3afde48514d0de443 *data/Ogata.rda
 821fafd567203540c8d9240af687fc27 *data/Tangshan.rda
 666fd7f646637595e5a5809861d74365 *data/Tangshan.txt.gz
 33024865aec9e5456f32fbf992ffe490 *inst/CITATION
-b21dbc264bb7dce67f457595ff192367 *inst/doc/index.html
-c514dd17cd85941ab3e35c9a1caf0eae *man/Changes.Rd
+9daadbd9ea3c396eec62f04d01909604 *inst/doc/index.html
+fd6a543bb0d60f57d40e4136976cbe2a *man/Changes.Rd
 2172e638ed08db842fcdd30774529ec6 *man/NthChina.Rd
 6ecdab94a5991fdb8f24e1095ecc11dc *man/Ogata.Rd
 87f83d998c0b24cf23697c9dc41b4d10 *man/Phuket.Rd
@@ -48,7 +48,7 @@ f2be50e9830877677299ee17ab401065 *man/gif.Rd
 d9347ba4e4f91170bcd2a2bf1bccd1eb *man/linksrm.Rd
 823ae0f56032770b40ee7d3e1543c19c *man/linksrm_convert.Rd
 fceaa14c6c9fe4d6387250874fc7e050 *man/linksrm_gif.Rd
-fee3cba7ccb17a0d13a0425549b0ec82 *man/logLik.Rd
+12c2140978f3206c8c680d080212e347 *man/logLik.Rd
 1391ca57c4ec8cf0d977c5cdb1a07f2e *man/marks.Rd
 ec73cf5c9c2971dea5b52f4656bdfe43 *man/mpp.Rd
 26f8e540254aa89c7343a6a6d8239836 *man/neglogLik.Rd
