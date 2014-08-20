@@ -54,15 +54,15 @@ temp_map <- function(y, p){
     return(y)
 }
 
-#   replace linksrm_gif with linksrm1_gif (faster)
-if (exists('St1')) rm(St1)
-if (exists('St2')) rm(St2)
-x$gif <- linksrm1_gif
-
 weight <- c(0.1, 0.1, 0.005, 0.005, 0.1, 0.1, 0.1, 0.1)
+
+#   see manual page for linksrm_gif for modifications to
+#   make calculations faster
+
+#   for testing, restrict to 5 iterations
 z <- nlm(neglogLik, p[1:8], object=x, pmap=temp_map,
          hessian=TRUE, gradtol=1e-08, steptol=1e-10,
-         print.level=2, iterlim=500, typsize=weight)
+         print.level=2, iterlim=5, typsize=weight)
 
 param.names <- c("a1", "a2", "b1", "b2", "c11", "c12", "c21", "c22")
 param.est <- cbind(p[1:8], z$estimate, sqrt(diag(solve(z$hessian))))
@@ -83,12 +83,19 @@ par(par.default)
 #   plot "residuals" for each region
 tau <- residuals(x)
 par(mfrow=c(2,1))
-plot(tau[[1]], ylab="Transformed Time",
-     xlab="Event Number", main="Region 1")
-abline(a=0, b=1, lty=2, col="red")
-plot(tau[[2]], ylab="Transformed Time",
-     xlab="Event Number", main="Region 2")
-abline(a=0, b=1, lty=2, col="red")
+for (i in 1:2){
+    plot(tau[[i]], ylab="Transformed Time",
+         xlab="Event Number", main=paste("Region", i))
+    abline(a=0, b=1, lty=2, col="red")
+}
+
+#   plot cusum of "residuals" for each region
+for (i in 1:2){
+    plot(tau[[i]] - 1:length(tau[[i]]), ylab="Cusum of Transformed Time",
+         xlab="Event Number", main=paste("Region", i))
+    abline(h=0, lty=2, col="red")
+}
+
 par(mfrow=c(1,1))
 }
 

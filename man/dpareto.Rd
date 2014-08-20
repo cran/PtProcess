@@ -27,6 +27,8 @@ ptappareto(q, lambda, theta, a, lower.tail=TRUE, log.p=FALSE)
 qtappareto(p, lambda, theta, a, lower.tail=TRUE, log.p=FALSE,
            tol=1e-8)
 rtappareto(n, lambda, theta, a)
+
+ltappareto(data, lambda, theta, a)
 }
 
 \arguments{
@@ -34,15 +36,19 @@ rtappareto(n, lambda, theta, a)
   \item{p}{vector of probabilities.}
   \item{data}{vector of sample data.}
   \item{n}{number of observations to simulate.}
-  \item{lambda}{shape parameter.}
-  \item{theta}{tapering parameter.}
-  \item{a}{the random variable takes values on the interval \eqn{a \le x < \infty}{a <= x < infty}.}
+  \item{lambda}{shape parameter, see Details below.}
+  \item{theta}{tapering parameter, see Details below..}
+  \item{a}{the random variable takes values on the interval \eqn{a \le x < \infty}{a <= x < infty}. This is a scalar and is assumed to be a constant for all values in a given function call.}
   \item{log, log.p}{logical; if \code{TRUE}, probabilities \code{p} are given as \code{log(p)}.}
   \item{lower.tail}{logical; if \code{TRUE} (default), probabilities are \eqn{\Pr\{X \le x\}}{Pr{X <= x}}, otherwise, \eqn{\Pr\{X > x\}}{Pr{X > x}}.}
   \item{tol}{convergence criteria for the Newton Raphson algorithm for solving the quantiles of the tapered Pareto distribution.}
 }
 
 \details{
+For all functions except \code{ltappareto}, arguments \code{lambda} and \code{theta} can either be scalars or vectors of the same length as \code{x}, \code{p}, or \code{q}. If a scalar, then this value is assumed to hold over all cases. If a vector, then the values are assumed to have a one to one relationship with the values in \code{x}, \code{p}, or \code{q}. The argument \code{a} is a scalar.
+
+In the case of \code{ltappareto}, all \code{data} are assumed to be drawn from the same distribution and hence \code{lambda}, \code{theta} and \code{a} are all scalars.
+
 Let \eqn{Y} be an exponential random variable with parameter \eqn{\lambda > 0}{lambda > 0}. Then the distribution function of \eqn{Y} is
 \deqn{
 F_Y(y) = \Pr\{Y < y \} = 1 - \exp(-\lambda y),

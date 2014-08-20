@@ -64,6 +64,20 @@ This page contains a listing of recent changes made to functions, and known gene
 \item List functions explicitly in NAMESPACE; ``\code{LazyData: no}'' and ``\code{ZipData: no}'' in DESCRIPTION file. (9 Dec 2011)
 
 \item \code{\link{logLik.mpp}}: Enable one to specify the relative CPU speeds of the nodes when parallel processing. (9 Dec 2011)
+
+\item \code{\link{mpp}} and \code{\link{etas_normal0}}: Restrict the number of iterations in examples on manual pages to minimise time during package checks. (13 Dec 2011)
+
+\item \code{\link{residuals}} and \code{\link{linksrm}}: Include example using cusum of residuals on manual page. (15 Dec 2011)
+
+\item \code{\link{dpareto}}, \code{\link{dtappareto}}, \code{\link{ltappareto}} (etc): Include parameter consistency checks. (6 Jan 2014)
+
+\item \code{\link{etas_gif}}: Documentation example error: \code{marks=list(rmagn_mark, rmagn_mark)} should be \code{marks=list(dmagn_mark, NULL)}. (23 Jan 2014)
+
+\item \code{linksrm1_gif}: Function deleted, alternative discussed on manual page of \code{\link{linksrm_gif}}. (19 Mar 2014)
+
+\item Correct html problem in \file{inst/doc/index.html}. (14 Aug 2014)
+
+\item \code{\link{logLik.mpp}}: Call to \code{clusterApply} changed to \code{snow::clusterApply}. (20 Aug 2014)
 }}
 
 

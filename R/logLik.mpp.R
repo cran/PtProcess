@@ -36,7 +36,7 @@ logLik.mpp <- function(object, SNOWcluster=NULL, ...){
                 }
             }
             w[[m]] <- evalpts0[(n1+1):n,]
-            L0 <- clusterApply(SNOWcluster, w, gif_cluster,
+            L0 <- snow::clusterApply(SNOWcluster, w, gif_cluster,
                                data=data, params=gparams)
             L1 <- sum(log(L0[[1]]))
             for (i in 2:m) L1 <- L1 + sum(log(L0[[i]]))

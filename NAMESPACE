@@ -12,7 +12,6 @@ export(
 
     etas_gif,
     linksrm_gif,
-    linksrm1_gif,
     expfourier_gif,
     exppoly_gif,
     fourier_gif,
@@ -27,7 +26,8 @@ export(
     linksrm_convert,
     linksrm,
     mpp,
-    neglogLik)
+    neglogLik
+)
 
 importFrom(stats, simulate, logLik)
 

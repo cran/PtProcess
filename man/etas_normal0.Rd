@@ -125,19 +125,16 @@ if (require(snow)){
                             "localhost", "localhost"))
     clusterExport(cl, c("etas_normal0"))
 }
-}
 
 initial <- log(params)
 #  set iterlim larger to converge satisfactorily
 #  needs about 47 iterations
 z <- nlm(neglogLik, initial, object=x, pmap=allmap,
-         print.level=2, iterlim=5, SNOWcluster=cl)
+         print.level=2, iterlim=1, SNOWcluster=cl)
 
-\dontrun{
 if (!is.null(cl)){
     stopCluster(cl)
     rm(cl)
-}
 }
 
 x <- allmap(x, z$estimate)
@@ -154,6 +151,7 @@ print(logLik(x))
 #   of events in TT (1248)
 print(sum((x$data$time > TT[1]) & (x$data$time < TT[2])))
 print(etas_tmp(x$data, NULL, x$params, TT=TT))
+}
 }
 
 \keyword{models}

@@ -57,6 +57,10 @@ tau <- residuals(x)
 
 plot(tau, ylab="Transformed Time", xlab="Event Number")
 abline(a=0, b=1, lty=2, col="red")
+
+#   represent as a cusum
+plot(tau - 1:length(tau), ylab="Cusum of Transformed Time", xlab="Event Number")
+abline(h=0, lty=2, col="red")
 }
 
 \keyword{methods}

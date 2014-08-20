@@ -56,7 +56,8 @@ dmagn_mark <- function(x, data, params){
 }
 
 TT <- c(0, 4018)
-params <- c(0.007, 2.3, 0.98, 0.008, 0.94, 1.25, 0.2)
+# params <- c(0.0067, 1.1025, 1.0794, 0.0169, 0.9506, 1.9159, 0.4704)
+params <- c(0.007, 1.1, 1.08, 0.02, 0.95, 1.92, 0.47)
 
 x <- mpp(data=Tangshan,
          gif=etas_gif,
@@ -75,8 +76,11 @@ allmap <- function(y, p){
 #    Parameters must be positive. Transformed so that nlm
 #    can use entire real line (no boundary problems, see
 #    topic "neglogLik" for further explanation).
+#    Argument "iterlim" has been restricted to 2 to avoid
+#    excessive time in package checks, set much larger to
+#    ensure convergence.
 z <- nlm(neglogLik, log(params), object=x, pmap=allmap,
-         print.level=2, iterlim=500, typsize=abs(params))
+         print.level=2, iterlim=2, typsize=abs(params))
 
 x1 <- allmap(x, z$estimate)
 
