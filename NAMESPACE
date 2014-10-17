@@ -26,7 +26,9 @@ export(
     linksrm_convert,
     linksrm,
     mpp,
-    neglogLik
+    neglogLik,
+
+    makeSOCKcluster
 )
 
 importFrom(stats, simulate, logLik)

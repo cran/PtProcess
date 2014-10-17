@@ -1,5 +1,5 @@
-db0992dbbeb9b17b58c8ffa6fd34d557 *DESCRIPTION
-be88c7a6cacaf84df3d9502bcf689cb2 *NAMESPACE
+ced45e037687e7e6259e58b9c18816dc *DESCRIPTION
+166b044235f70dae65706b71f262240b *NAMESPACE
 ed0af9252eedcf3f450c84b39e52c4ad *R/dexp_mark.R
 eb13309ae2ce00e12c8805dd8aa488bb *R/dpareto.R
 51c946480eea3c2578f7e198bfaf487e *R/etas_gif.R
@@ -8,7 +8,8 @@ b6cdea988b11a46a53942aaa78af24db *R/linksrm.R
 7394703f0bac2ff54245581d3b5949f9 *R/linksrm_convert.R
 502807db87d565bee3f0df4b6507d0b7 *R/linksrm_gif.R
 617ba5bffaa196305b6f18cde52e5203 *R/logLik.linksrm.R
-3189c12addbd5d6b21811a3a8b52ac71 *R/logLik.mpp.R
+99b5587dfec2cdd2d64841960b1e98a3 *R/logLik.mpp.R
+afe9deb98e25ac5beebe2697938cdf23 *R/makeSOCKcluster.R
 2405953b9582f80533118221621b9153 *R/mpp.R
 bf31d5e525ffadca215240beb0053793 *R/neglogLik.R
 b8db9fdcea9102a6424ea0edbcbaca18 *R/plot.linksrm.R
@@ -33,7 +34,7 @@ da2a1b4ee47563811326b6a133d0fd5f *data/Ogata.rda
 666fd7f646637595e5a5809861d74365 *data/Tangshan.txt.gz
 33024865aec9e5456f32fbf992ffe490 *inst/CITATION
 72e406f7bc1cafc61a6421c42ef008d8 *inst/doc/index.html
-2ae2b7ef91d9d351e23211ca7a9d4bf3 *man/Changes.Rd
+1298b5744b74fabbc61aae033aeffef0 *man/Changes.Rd
 2172e638ed08db842fcdd30774529ec6 *man/NthChina.Rd
 6ecdab94a5991fdb8f24e1095ecc11dc *man/Ogata.Rd
 87f83d998c0b24cf23697c9dc41b4d10 *man/Phuket.Rd
@@ -48,10 +49,11 @@ f2be50e9830877677299ee17ab401065 *man/gif.Rd
 35de6a6a72941cb2eb554799f3276d62 *man/linksrm.Rd
 823ae0f56032770b40ee7d3e1543c19c *man/linksrm_convert.Rd
 2df738907e3bdfc984e8bd6066358a9f *man/linksrm_gif.Rd
-12c2140978f3206c8c680d080212e347 *man/logLik.Rd
+54fd30a8c02d579bc2503487e7d914fe *man/logLik.Rd
+1b7e9a2f18897f0226b5b34d9b6b7715 *man/makeSOCKcluster.Rd
 1391ca57c4ec8cf0d977c5cdb1a07f2e *man/marks.Rd
 7a98a8569c915b798940499adddf94c1 *man/mpp.Rd
-26f8e540254aa89c7343a6a6d8239836 *man/neglogLik.Rd
+9006eeaac049327d031ad86af1435945 *man/neglogLik.Rd
 7559040b29e5b1f4404cef69b4665af0 *man/plot.Rd
 22f6d8f1341fd3f67a4f6e96dcbfd8a1 *man/residuals.Rd
 35da6dfbe32a65fd9922d88e4ae529f1 *man/simple_gif.Rd

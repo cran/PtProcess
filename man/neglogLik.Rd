@@ -14,7 +14,7 @@ neglogLik(params, object, pmap = NULL, SNOWcluster=NULL)
   \item{params}{a vector of revised parameter values.}
   \item{object}{an object of class \code{"\link{mpp}"}.}
   \item{pmap}{a user provided function mapping the revised parameter values \code{params} into the appropriate locations in \code{object}. If \code{NULL} (default), an untransformed one to one mapping is used.}
-  \item{SNOWcluster}{an object of class \code{"cluster"} created by the package \pkg{snow}; default is \code{NULL}. Enables parallel processing if not \code{NULL}. See \code{\link{logLik}} for further details.}
+  \item{SNOWcluster}{an object of class \code{"cluster"} created by the package \pkg{parallel}; default is \code{NULL}. Enables parallel processing if not \code{NULL}. See \code{\link{logLik}} for further details.}
 }
 
 \value{

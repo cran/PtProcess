@@ -16,7 +16,7 @@ Calculates the log-likelihood of a point process. Provides methods for the gener
 
 \arguments{
   \item{object}{an object with class \code{"\link{mpp}"} or \code{"\link{linksrm}"}.}
-  \item{SNOWcluster}{an object of class \code{"cluster"} created by the package \pkg{snow}; default is \code{NULL}. Enables parallel processing if not \code{NULL}. See \dQuote{Parallel Processing} below for further details.}
+  \item{SNOWcluster}{an object of class \code{"cluster"} created by the package \pkg{parallel}; default is \code{NULL}. Enables parallel processing if not \code{NULL}. See \dQuote{Parallel Processing} below for further details.}
   \item{\dots}{other arguments.}
 }
 
@@ -31,8 +31,8 @@ We have assumed that communication between nodes is fairly slow, and hence it is
 
 The required steps in initiating parallel processing are as follows.
 \preformatted{
-#   load the "snow" package
-library(snow)
+#   load the "parallel" package
+library(parallel)
 
 #   define the SNOW cluster object, e.g. a SOCK cluster
 #   where each node has the same R installation.
@@ -49,6 +49,9 @@ rimu    <- list(host="rimu.localdomain",
                 snowlib="/usr/local/lib/R/site-library")
 cl <- makeCluster(list(totara, totara, rimu), type="SOCK")
 
+#   NOTE: THE STATEMENTS ABOVE WERE APPROPRIATE FOR THE snow PACKAGE.
+#   I HAVE NOT YET TESTED THEM USING THE parallel PACKAGE.
+
 #   Relative CPU speeds of the nodes can be added as an attribute
 #   Say rimu runs at half the speed of totara
 #   (default assumes all run at same speed)
@@ -63,7 +66,7 @@ print(logLik(x, SNOWcluster=cl))
 #   stop the R jobs on the slave machines
 stopCluster(cl)
 }
-Note that the communication method does not need to be \code{SOCKS}; see the \pkg{snow} package documentation, topic \code{\link[snow]{snow-startstop}}, for other options. Further, if some nodes are on other machines, the firewalls may need to be tweaked. The master machine initiates the \R jobs on the slave machines by communicating through port 22 (use of security keys are needed rather than passwords), and subsequent communications through port 10187. Again, these details can be tweaked in the options settings within the \pkg{snow} package.
+Note that the communication method does not need to be \code{SOCKS}; see the \pkg{parallel} package documentation, topic \code{\link[parallel]{makeCluster}}, for other options. Further, if some nodes are on other machines, the firewalls may need to be tweaked. The master machine initiates the \R jobs on the slave machines by communicating through port 22 (use of security keys are needed rather than passwords), and subsequent communications use random ports. This port can be fixed, see \code{\link[parallel]{makeCluster}}.
 }
 
 \examples{

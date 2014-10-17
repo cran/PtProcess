@@ -78,6 +78,12 @@ This page contains a listing of recent changes made to functions, and known gene
 \item Correct html problem in \file{inst/doc/index.html}. (14 Aug 2014)
 
 \item \code{\link{logLik.mpp}}: Call to \code{clusterApply} changed to \code{snow::clusterApply}. (20 Aug 2014)
+
+\item \code{\link{logLik.mpp}}: The package \pkg{snow} has been superseded by \pkg{parallel}. Change \code{snow} to \code{parallel}, also in file \file{DESCRIPTION}. (15 Oct 2014)
+
+\item \code{\link{makeSOCKcluster}}: This function is in \pkg{snow} but not in \pkg{parallel}. This function points to the closest eqivalent in \pkg{parallel}, \code{\link[parallel]{makePSOCKcluster}}. \code{\link{makeSOCKcluster}} will eventually become deprecated. Was added to the export list in file \file{NAMESPACE} too. (15 Oct 2014)
+
+\item \code{\link{logLik.mpp}}, \code{\link{neglogLik}}: Update consistent with changes from \pkg{snow} to \pkg{parallel}.(17 Oct 2014)
 }}
 
 
