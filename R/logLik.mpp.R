@@ -10,7 +10,7 @@ logLik.mpp <- function(object, SNOWcluster=NULL, ...){
     evalpts0 <- data[((data[,"time"] <= TT[2]) &
                      (data[,"time"] >= TT[1])), ]
     if (!is.null(SNOWcluster)){
-        if (!require(parallel)) stop("The R package `parallel' is required")
+        if (!requireNamespace("parallel")) stop("The R package 'parallel' is required to use the argument SNOWcluster")
         if (inherits(SNOWcluster, "cluster")){
             #  swap order of evalpts & data, TT & tplus not needed
             gif_cluster <- function(evalpts, data, params)
