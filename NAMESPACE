@@ -31,7 +31,10 @@ export(
     makeSOCKcluster
 )
 
-importFrom(stats, simulate, logLik)
+importFrom(graphics, plot)
+
+importFrom(stats, dexp, integrate, logLik, pnorm,
+           qexp, rexp, runif, simulate, ts)
 
 #   methods for class "linksrm"
 S3method(logLik, linksrm)

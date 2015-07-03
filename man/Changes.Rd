@@ -86,6 +86,12 @@ This page contains a listing of recent changes made to functions, and known gene
 \item \code{\link{logLik.mpp}}, \code{\link{neglogLik}}: Update consistent with changes from \pkg{snow} to \pkg{parallel}. (17 Oct 2014)
 
 \item \code{\link{logLik.mpp}}: Change \code{require(parallel)} to \code{requireNamespace("parallel")}. (21 Jan 2015)
+
+\item Added to NAMESPACE: \cr
+\code{importFrom(graphics, plot)} \cr
+\code{importFrom(stats, dexp, integrate, logLik, pnorm,} \cr
+\code{           qexp, rexp, runif, simulate, ts)} \cr
+(03 Jul 2015)
 }}
 
 

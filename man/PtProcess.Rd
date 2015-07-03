@@ -76,7 +76,7 @@ Kagan, Y. & Schoenberg, F. (2001). Estimation of the upper cutoff parameter for 
 
 Lewis, P.A.W. & Shedler, G.S. (1979). Simulation of nonhomogeneous Poisson processes by thinning. \emph{Naval Research Logistics Quarterly} \bold{26(3)}, 403--413. DOI: \url{http://dx.doi.org/10.1002/nav.3800260304}
 
-Ogata, Y. (1981). On Lewis' simulation method for point processes. \emph{IEEE Transactions on Information Theory} \bold{27(1)}, 23--31.
+Ogata, Y. (1981). On Lewis' simulation method for point processes. \emph{IEEE Transactions on Information Theory} \bold{27(1)}, 23--31. DOI: \url{http://dx.doi.org/10.1109/TIT.1981.1056305}.
 
 Ogata, Y. (1988). Statistical models for earthquake occurrences and residual analysis for point processes. \emph{J. Amer. Statist. Assoc.} \bold{83(401)}, 9--27. DOI: \url{http://dx.doi.org/10.2307/2288914}.
 
