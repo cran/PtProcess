@@ -15,7 +15,11 @@ plot.mpp <- function(x, log = FALSE, ...){
     else ylab <- ls...$ylab
     if (is.null(ls...$xlab)) xlab <- expression(t)
     else xlab <- ls...$xlab
+    if (is.null(ls...$xlim)) xlim <- x$TT
+    else xlim <- ls...$xlim
+    if (is.null(ls...$ylim)) ylim <- NULL
+    else ylim <- ls...$ylim
     plot(times, y, type="l", ylab=ylab, xlab=xlab,
-         xlim=x$TT)
+         xlim=xlim, ylim=ylim)
 }
 

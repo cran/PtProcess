@@ -39,7 +39,7 @@ This page contains a listing of recent changes made to functions, and known gene
 
 \item \code{\link{plot}}: Correct hyperlink to generic plot function. (10 Oct 2009)
 
-\item \code{\link{etas_normal0}}: New function. Test version of a spatial ETAS conditional intensity function. (12 Oct 2009)
+\item \code{etas_normal0}: New function. Test version of a spatial ETAS conditional intensity function. (12 Oct 2009)
 
 \item \code{\link{logLik}}: Fixed bug when using parallel processing on only two nodes. (22 Oct 2009)
 
@@ -53,7 +53,7 @@ This page contains a listing of recent changes made to functions, and known gene
 
 \item \code{\link{simulate.mpp}}: Two bugs: \code{use <- (data[, "time"] < TT[1])} changed to \code{use <- (data[, "time"] <= TT[1])}, and \code{else data <- data[use, c("time", "magnitude")]} changed to \code{else data <- data[use, ]}. (18 Jun 2010)
 
-\item \code{\link{etas_normal0}}: Errors in some terms involving \code{beta}. (18 Jun 2010)
+\item \code{etas_normal0}: Errors in some terms involving \code{beta}. (18 Jun 2010)
 
 \item Minor citation and reference inclusion changes to manual pages. (19 Jul 2010)
 
@@ -65,7 +65,7 @@ This page contains a listing of recent changes made to functions, and known gene
 
 \item \code{\link{logLik.mpp}}: Enable one to specify the relative CPU speeds of the nodes when parallel processing. (9 Dec 2011)
 
-\item \code{\link{mpp}} and \code{\link{etas_normal0}}: Restrict the number of iterations in examples on manual pages to minimise time during package checks. (13 Dec 2011)
+\item \code{\link{mpp}} and \code{etas_normal0}: Restrict the number of iterations in examples on manual pages to minimise time during package checks. (13 Dec 2011)
 
 \item \code{\link{residuals}} and \code{\link{linksrm}}: Include example using cusum of residuals on manual page. (15 Dec 2011)
 
@@ -92,6 +92,12 @@ This page contains a listing of recent changes made to functions, and known gene
 \code{importFrom(stats, dexp, integrate, logLik, pnorm,} \cr
 \code{           qexp, rexp, runif, simulate, ts)} \cr
 (03 Jul 2015)
+
+\item \code{\link{PtProcess}}: Add DOI to some references, rename topic to appear first in table of contents. (16 Oct 2015)
+
+\item \code{\link{plot.mpp}}: Activate argument \code{ylim}. (17 Aug 2016)
+
+\item \code{etas_normal0}: This has been removed. Adding a spatial dimension requires more generality in other package functions like \code{\link{logLik.mpp}}. For a reasonable amount of generality, it requires the addition of new model class, currently under development. (01 Sep 2016)
 }}
 
 

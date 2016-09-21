@@ -22,7 +22,6 @@ export(
     dexp_mark,
     rexp_mark,
 
-    etas_normal0,
     linksrm_convert,
     linksrm,
     mpp,
