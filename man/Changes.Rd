@@ -51,13 +51,18 @@ This page contains a listing of recent changes made to functions, and known gene
 
 \item \code{\link{simulate.linksrm}}, \code{\link{simulate.mpp}}, \code{\link{logLik.mpp}}: Inconsistency in nomenclature between \dQuote{mark} and \dQuote{marks}, will standardise on the plural. (07 May 2010)
 
-\item \code{\link{simulate.mpp}}: Two bugs: \code{use <- (data[, "time"] < TT[1])} changed to \code{use <- (data[, "time"] <= TT[1])}, and \code{else data <- data[use, c("time", "magnitude")]} changed to \code{else data <- data[use, ]}. (18 Jun 2010)
+\item \code{\link{simulate.mpp}}: Two bugs: \cr
+\code{use <- (data[, "time"] < TT[1])} changed to \code{use <- (data[, "time"] <= TT[1])}, \cr
+and \code{else data <- data[use, c("time", "magnitude")]} changed to \cr
+\code{else data <- data[use, ]}. (18 Jun 2010)
 
 \item \code{etas_normal0}: Errors in some terms involving \code{beta}. (18 Jun 2010)
 
 \item Minor citation and reference inclusion changes to manual pages. (19 Jul 2010)
 
-\item \code{\link{simulate.mpp}}: Bug fix on 18 June 2010 induced another bug; \code{data <- rbind(data, newevent)} changed to \code{data <- rbind(data[, names(newevent)], newevent)}. (11 Dec 2010)
+\item \code{\link{simulate.mpp}}: Bug fix on 18 June 2010 induced another bug;\cr
+\code{data <- rbind(data, newevent)} changed to\cr
+\code{data <- rbind(data[, names(newevent)], newevent)}. (11 Dec 2010)
 
 \item Implement very basic NAMESPACE. (5 Nov 2011)
 
@@ -98,6 +103,10 @@ This page contains a listing of recent changes made to functions, and known gene
 \item \code{\link{plot.mpp}}: Activate argument \code{ylim}. (17 Aug 2016)
 
 \item \code{etas_normal0}: This has been removed. Adding a spatial dimension requires more generality in other package functions like \code{\link{logLik.mpp}}. For a reasonable amount of generality, it requires the addition of new model class, currently under development. (01 Sep 2016)
+
+\item \code{\link{simulate.mpp}}: Did not allow argument \code{marks = list(NULL, NULL)} in \code{\link{mpp}} object. \cr \code{simulate.mpp} now tests to see if \code{NULL} marks. (17 Nov 2017)
+
+\item \code{\link{fourier_gif}}: Example added on manual page with \code{NULL} marks. (17 Nov 2017)
 }}
 
 

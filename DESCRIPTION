@@ -1,6 +1,6 @@
 Package: PtProcess
-Version: 3.3-12
-Date: 2016-09-21
+Version: 3.3-13
+Date: 2017-11-17
 Title: Time Dependent Point Process Modelling
 Author: David Harte
 Maintainer: David Harte <d.s.harte@gmail.com>
@@ -8,8 +8,8 @@ Description: Fits and analyses time dependent marked point process models with a
 Suggests: parallel
 LazyData: no
 License: GPL (>= 2)
-URL: ftp://ftp.gns.cri.nz/pub/davidh/sslib/r-repo/
+URL: http://www.statsresearch.co.nz/dsh/sslib/
 NeedsCompilation: no
-Packaged: 2016-09-21 01:43:19 UTC; davidh
+Packaged: 2017-11-16 19:50:42 UTC; davidh
 Repository: CRAN
-Date/Publication: 2016-09-21 07:27:36
+Date/Publication: 2017-11-16 21:50:15 UTC
