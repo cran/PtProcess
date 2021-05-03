@@ -28,7 +28,7 @@ The Phuket earthquake occurred on 26 December 2004 at 00:58:53.45 GMT. The \code
 }
 
 \source{
-The data were extracted from the PDE (Preliminary Determination of Epicentres) catalogue provided by the US Geological Survey (\url{ftp://hazards.cr.usgs.gov/pde/}).
+The data were extracted from the PDE (Preliminary Determination of Epicentres) catalogue provided by the US Geological Survey (\url{https://earthquake.usgs.gov/data/comcat/catalog/us/}).
 }
 
 \examples{

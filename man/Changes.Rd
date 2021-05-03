@@ -107,6 +107,9 @@ and \code{else data <- data[use, c("time", "magnitude")]} changed to \cr
 \item \code{\link{simulate.mpp}}: Did not allow argument \code{marks = list(NULL, NULL)} in \code{\link{mpp}} object. \cr \code{simulate.mpp} now tests to see if \code{NULL} marks. (17 Nov 2017)
 
 \item \code{\link{fourier_gif}}: Example added on manual page with \code{NULL} marks. (17 Nov 2017)
+
+\item \code{\link{Phuket}}: Hyperlink to data source updated, others updated to https where possible. (24 Apr 2021)
+
 }}
 
 

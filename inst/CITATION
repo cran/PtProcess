@@ -2,18 +2,19 @@ citHeader("To cite PtProcess in publications use:")
 
 citEntry(entry = "Article",
   title        = "{PtProcess}: An {R} Package for Modelling Marked Point Processes Indexed by Time",
-  author       = personList(as.person("David Harte")),
+  author       = personList(as.person("David S. Harte")),
   journal      = "Journal of Statistical Software",
   year         = "2010",
   volume       = "35",
   number       = "8",
   pages        = "1--32",
-  url          = "http://www.jstatsoft.org/v35/i08/",
+  doi          = "10.18637/jss.v035.i08",
+  url          = "https://cran.r-project.org/package=PtProcess",
 
   textVersion  =
-  paste("David Harte (2010).",
+  paste("Harte, D.S. (2010).",
         "PtProcess: An R Package for Modelling Marked Point Processes Indexed by Time.",
         "Journal of Statistical Software, 35(8), 1-32.",
-        "URL http://www.jstatsoft.org/v35/i08/.")
+        "doi: 10.18637/jss.v035.i08")
 )
 

@@ -36,7 +36,7 @@ The parameter spaces of the ground intensity function and mark distribution are 
 
     mmap = expression(c(log(params[2]/3), params[5]))
 }
-Note the inclusion of the combine (\code{\link{c}}) function, because the \code{\link{expression}} must create a vector of parameters. Care must be taken specifying these expressions are they are embedded directly into the code of various functions.
+Note the inclusion of the combine (\code{\link{c}}) function, because the \code{\link{expression}} must create a vector of parameters. Care must be taken specifying these expressions as they are embedded directly into the code of various functions.
 }
 
 \examples{
