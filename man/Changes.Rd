@@ -110,12 +110,13 @@ and \code{else data <- data[use, c("time", "magnitude")]} changed to \cr
 
 \item \code{\link{Phuket}}: Hyperlink to data source updated, others updated to https where possible. (24 Apr 2021)
 
+\item Updated \file{DESCRIPTION} file. (03 Jun 2025)
 }}
 
 
 %\section{Required Changes or Checking}{
 %\enumerate{
-%\item 
+%\item
 %}}
 
 

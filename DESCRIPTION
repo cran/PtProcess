@@ -1,15 +1,19 @@
 Package: PtProcess
-Version: 3.3-16
-Date: 2021-05-02
+Version: 3.3-17
+Date: 2025-06-03
 Title: Time Dependent Point Process Modelling
-Author: David Harte
-Maintainer: David Harte <d.s.harte@gmail.com>
+Authors@R: person(given = "David",
+                  family = "Harte",
+                  role = c("aut", "cre"),
+                  email = "d.s.harte@gmail.com")
 Description: Fits and analyses time dependent marked point process models with an emphasis on earthquake modelling. For a more detailed introduction to the package, see the topic "PtProcess". A list of recent changes can be found in the topic "Change Log".
 Suggests: parallel
 LazyData: no
 License: GPL (>= 2)
 URL: https://www.statsresearch.co.nz/dsh/sslib/
 NeedsCompilation: no
-Packaged: 2021-05-02 06:44:30 UTC; david
+Packaged: 2025-06-03 01:31:54 UTC; david
+Author: David Harte [aut, cre]
+Maintainer: David Harte <d.s.harte@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-05-03 18:30:02 UTC
+Date/Publication: 2025-06-03 05:50:01 UTC

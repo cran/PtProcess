@@ -91,7 +91,7 @@ Ogata, Y. (1999). Seismicity analysis through point-process modeling: a review. 
 
 Ogata, Y. & Zhuang, J.C. (2006). Space-time ETAS models and an improved extension. \emph{Tectonophysics} \bold{413(1-2)}, 13--23. \doi{10.1016/j.tecto.2005.10.016}
 
-Peng, R. (2002). Multi-dimensional Point Process Models. Package \dQuote{ptproc}, URL: \url{http://www.biostat.jhsph.edu/~rpeng/}.
+Peng, R. (2002). Multi-dimensional Point Process Models. Package \dQuote{ptproc}, URL: \url{https://rdpeng.org/}.
 
 Peng, R. (2003). Multi-dimensional point process models in R. \emph{Journal of Statistical Software} \bold{8(16)}, 1--27. \doi{10.18637/jss.v008.i16}
 
